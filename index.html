@@ -1,609 +1,300 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="LEGMAO AI — AI growth infrastructure for modern business. Turn customer signals into intelligent conversations, qualified opportunities and the next best business action.">
-  <title>LEGMAO AI — Intelligence that moves business forward</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* ===== RESET & TOKENS ===== */
-    :root {
-      --bg: #070708;
-      --panel: #0c0c0f;
-      --panel2: #101014;
-      --text: #f4f4f2;
-      --muted: #898990;
-      --soft: #b9b9c0;
-      --line: rgba(255, 255, 255, .085);
-      --line2: rgba(255, 255, 255, .14);
-      --accent: #91a7ff;
-      --accent2: #b7a8ff;
-      --green: #a8e7c1;
-      --amber: #f5d78a;
-      --ease: cubic-bezier(.22, 1, .36, 1);
-      --radius: 16px;
-      --shadow: 0 20px 40px -12px rgba(0, 0, 0, .8);
-      --font-display: 'Manrope', sans-serif;
-      --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="LEGMAO AI — intelligent growth infrastructure for modern businesses.">
+<title>LEGMAO AI — Intelligence in Motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070708;
+  --panel:#0c0c0f;
+  --panel2:#101014;
+  --text:#f4f4f2;
+  --muted:#898990;
+  --soft:#b9b9c0;
+  --line:rgba(255,255,255,.085);
+  --line2:rgba(255,255,255,.14);
+  --accent:#91a7ff;
+  --accent2:#b7a8ff;
+  --green:#a8e7c1;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --radius:16px;
+  --shadow:0 20px 40px -12px rgba(0,0,0,.8);
+}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',system-ui,-apple-system,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-    /* ===== UTILITIES ===== */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+/* === LAYOUT === */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-    /* ===== NAV ===== */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(7, 7, 8, .82);
-      backdrop-filter: blur(20px) saturate(1.4);
-      -webkit-backdrop-filter: blur(20px) saturate(1.4);
-      border-bottom: 1px solid var(--line);
-      transition: background .3s var(--ease);
-    }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px;
-    }
-    .logo {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--font-display); font-weight: 800;
-      font-size: 1.2rem; letter-spacing: -.02em; color: var(--text);
-      text-decoration: none;
-    }
-    .logo-mark {
-      width: 28px; height: 28px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      font-size: .7rem; font-weight: 800; color: #0a0a0e;
-      box-shadow: 0 0 18px rgba(145, 167, 255, .25);
-    }
-    .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a {
-      color: var(--soft); text-decoration: none; font-size: .9rem;
-      font-weight: 500; transition: color .2s var(--ease);
-      position: relative;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a.active { color: var(--text); }
-    .nav-links a.active::after {
-      content: ''; position: absolute; bottom: -6px; left: 0; right: 0;
-      height: 2px; background: var(--accent); border-radius: 2px;
-    }
-    .nav-cta {
-      padding: 9px 22px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #0a0a0e; font-weight: 700; font-size: .85rem;
-      text-decoration: none; transition: all .25s var(--ease);
-      box-shadow: 0 0 24px rgba(145, 167, 255, .2);
-    }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 0 36px rgba(145, 167, 255, .35); }
-    .nav-lang {
-      color: var(--muted); font-size: .82rem; font-weight: 500;
-      text-decoration: none; transition: color .2s;
-    }
-    .nav-lang:hover { color: var(--text); }
+/* === NAV === */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(7,7,8,.82);
+  backdrop-filter:blur(20px) saturate(1.4);
+  -webkit-backdrop-filter:blur(20px) saturate(1.4);
+  border-bottom:1px solid var(--line);
+  transition:background .3s var(--ease);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;max-width:1200px;margin:0 auto;padding:0 24px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Manrope',sans-serif;font-weight:800;
+  font-size:1.2rem;letter-spacing:-.02em;color:var(--text);
+  text-decoration:none;
+}
+.logo-mark{
+  width:28px;height:28px;border-radius:9px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:800;color:#0a0a0e;
+  box-shadow:0 0 18px rgba(145,167,255,.25);
+}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+  color:var(--soft);text-decoration:none;font-size:.9rem;
+  font-weight:500;transition:color .2s var(--ease);
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  padding:9px 22px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#0a0a0e;font-weight:700;font-size:.85rem;
+  text-decoration:none;transition:all .25s var(--ease);
+  box-shadow:0 0 24px rgba(145,167,255,.2);
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 36px rgba(145,167,255,.35)}
 
-    /* ===== HERO (HOME) ===== */
-    .hero-home {
-      padding: 180px 0 120px;
-      position: relative; overflow: hidden;
-      min-height: 100vh;
-      display: flex; align-items: center;
-    }
-    .hero-home::before {
-      content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
-      width: 1000px; height: 1000px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(145, 167, 255, .055) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-home::after {
-      content: ''; position: absolute; bottom: -20%; right: -10%;
-      width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(183, 168, 255, .04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-home .container { position: relative; z-index: 1; }
-    .hero-eyebrow {
-      font-size: .78rem; font-weight: 600; color: var(--accent);
-      letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .hero-home h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 5rem);
-      font-weight: 800; line-height: 1.06;
-      letter-spacing: -.04em;
-      margin-bottom: 32px;
-      max-width: 820px;
-    }
-    .hero-home h1 .grad {
-      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--green));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-home p {
-      font-size: 1.18rem; color: var(--muted);
-      max-width: 540px; line-height: 1.75; margin-bottom: 48px;
-    }
-    .hero-link {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-weight: 600; font-size: 1rem;
-      color: var(--text); text-decoration: none;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line2);
-      transition: all .3s var(--ease);
-      letter-spacing: .01em;
-    }
-    .hero-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      gap: 16px;
-    }
-    .hero-link svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
-    .hero-link:hover svg { transform: translateX(4px); }
-    .hero-footnote {
-      margin-top: 80px;
-      font-size: .72rem; color: var(--muted);
-      letter-spacing: .18em; text-transform: uppercase;
-      font-weight: 500;
-    }
+/* === HERO === */
+.hero{
+  padding:160px 0 100px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(145,167,255,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-20%;right:-10%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(183,168,255,.05) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;max-width:760px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;border-radius:100px;
+  background:rgba(145,167,255,.08);
+  border:1px solid rgba(145,167,255,.18);
+  font-size:.78rem;font-weight:600;color:var(--accent);
+  letter-spacing:.03em;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 8px rgba(168,231,193,.6);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-    /* ===== SECTION: INTELLIGENCE LAYER ===== */
-    .section-layer {
-      padding: 130px 0;
-      border-top: 1px solid var(--line);
-      position: relative;
-    }
-    .section-layer .container { position: relative; z-index: 1; }
-    .layer-eyebrow {
-      font-size: .78rem; font-weight: 600; color: var(--accent);
-      letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .layer-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; letter-spacing: -.03em;
-      line-height: 1.15; margin-bottom: 24px;
-      max-width: 640px;
-    }
-    .layer-title .dim { color: var(--muted); }
-    .layer-desc {
-      color: var(--muted); font-size: 1.08rem;
-      max-width: 560px; line-height: 1.8; margin-bottom: 72px;
-    }
-    .layer-flow {
-      display: flex; align-items: center; gap: 0;
-      flex-wrap: wrap; margin-top: 20px;
-    }
-    .flow-step {
-      display: flex; flex-direction: column; gap: 6px;
-      padding: 0 32px;
-      border-right: 1px solid var(--line);
-      min-width: 140px;
-    }
-    .flow-step:first-child { padding-left: 0; }
-    .flow-step:last-child { border-right: none; padding-right: 0; }
-    .flow-step .step-label {
-      font-size: .7rem; font-weight: 600;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--accent);
-    }
-    .flow-step .step-desc {
-      font-family: var(--font-display);
-      font-size: 1.05rem; font-weight: 700;
-      letter-spacing: -.01em;
-      color: var(--text);
-    }
+h1{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(2.6rem,6vw,4.2rem);
+  font-weight:800;line-height:1.08;
+  letter-spacing:-.035em;
+  margin-bottom:24px;
+}
+h1 .grad{
+  background:linear-gradient(135deg,var(--accent),var(--accent2),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero p{
+  font-size:1.15rem;color:var(--muted);
+  max-width:560px;line-height:1.7;margin-bottom:40px;
+}
 
-    /* ===== SECTION: CAPABILITIES ===== */
-    .section-capabilities {
-      padding: 130px 0;
-      border-top: 1px solid var(--line);
-    }
-    .cap-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1px; background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .cap-item {
-      background: var(--panel);
-      padding: 52px 44px;
-      transition: background .35s var(--ease);
-    }
-    .cap-item:hover { background: var(--panel2); }
-    .cap-num {
-      font-family: var(--font-display);
-      font-size: .78rem; font-weight: 700;
-      color: var(--accent); letter-spacing: .08em;
-      margin-bottom: 24px;
-    }
-    .cap-item h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem; font-weight: 700;
-      letter-spacing: -.02em; margin-bottom: 14px;
-    }
-    .cap-item p {
-      color: var(--muted); font-size: .95rem;
-      line-height: 1.75; max-width: 380px;
-    }
+.btn-group{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 30px;border-radius:12px;
+  font-weight:600;font-size:.95rem;
+  text-decoration:none;transition:all .3s var(--ease);
+  cursor:pointer;border:none;font-family:inherit;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#0a0a0e;
+  box-shadow:0 0 30px rgba(145,167,255,.25);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 48px rgba(145,167,255,.4);
+}
+.btn-ghost{
+  background:transparent;color:var(--soft);
+  border:1px solid var(--line2);
+}
+.btn-ghost:hover{
+  border-color:rgba(255,255,255,.3);
+  color:var(--text);
+  background:rgba(255,255,255,.03);
+}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
 
-    /* ===== SECTION: INDUSTRIES ===== */
-    .section-industries {
-      padding: 130px 0;
-      border-top: 1px solid var(--line);
-    }
-    .ind-header {
-      display: flex; align-items: flex-end; justify-content: space-between;
-      flex-wrap: wrap; gap: 24px; margin-bottom: 64px;
-    }
-    .ind-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 800; letter-spacing: -.03em;
-      line-height: 1.15;
-    }
-    .ind-header .ind-sub {
-      color: var(--muted); font-size: 1rem;
-      max-width: 360px; line-height: 1.7;
-    }
-    .ind-list {
-      display: flex; flex-wrap: wrap; gap: 12px;
-    }
-    .ind-tag {
-      padding: 12px 26px; border-radius: 100px;
-      border: 1px solid var(--line2);
-      background: var(--panel);
-      font-size: .9rem; font-weight: 500;
-      color: var(--soft); text-decoration: none;
-      transition: all .3s var(--ease);
-    }
-    .ind-tag:hover {
-      border-color: var(--accent);
-      color: var(--text);
-      background: rgba(145, 167, 255, .06);
-    }
-    .ind-tag.featured {
-      background: linear-gradient(135deg, rgba(145, 167, 255, .12), rgba(183, 168, 255, .08));
-      border-color: rgba(145, 167, 255, .25);
-      color: var(--text);
-    }
+/* === METRICS STRIP === */
+.metrics{
+  padding:70px 0;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.metrics-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:40px;text-align:center;
+}
+.metric-value{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:800;letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--text),var(--soft));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.metric-label{
+  font-size:.82rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em;
+  font-weight:500;margin-top:6px;
+}
 
-    /* ===== CTA ===== */
-    .section-cta {
-      padding: 140px 0;
-      border-top: 1px solid var(--line);
-      position: relative; overflow: hidden;
-    }
-    .section-cta::before {
-      content: ''; position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(145, 167, 255, .05) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .section-cta .container { position: relative; z-index: 1; }
-    .cta-inner { max-width: 640px; }
-    .cta-inner h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; letter-spacing: -.035em;
-      line-height: 1.12; margin-bottom: 20px;
-    }
-    .cta-inner p {
-      color: var(--muted); font-size: 1.08rem;
-      line-height: 1.75; margin-bottom: 40px;
-    }
-    .cta-link {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-weight: 600; font-size: 1.05rem;
-      color: var(--text); text-decoration: none;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line2);
-      transition: all .3s var(--ease);
-    }
-    .cta-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      gap: 18px;
-    }
-    .cta-link svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
-    .cta-link:hover svg { transform: translateX(4px); }
+/* === FEATURES === */
+.features{padding:110px 0}
+.section-header{text-align:center;max-width:640px;margin:0 auto 64px}
+.section-header h2{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:800;letter-spacing:-.03em;
+  margin-bottom:16px;
+}
+.section-header p{color:var(--muted);font-size:1.05rem;line-height:1.7}
 
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 40px 0; border-top: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-copy { color: var(--muted); font-size: .85rem; }
-    .footer-links { display: flex; gap: 28px; }
-    .footer-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: .85rem; transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--text); }
+.features-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.feature-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:36px 30px;
+  transition:all .35s var(--ease);
+  position:relative;overflow:hidden;
+}
+.feature-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(145,167,255,.3),transparent);
+  opacity:0;transition:opacity .35s var(--ease);
+}
+.feature-card:hover{
+  background:var(--panel2);
+  border-color:var(--line2);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+.feature-card:hover::before{opacity:1}
 
-    /* ===== WORKSPACE (INTELLIGENCE PAGE) ===== */
-    .workspace {
-      padding: 140px 0 100px;
-      min-height: 100vh;
-    }
-    .ws-header {
-      margin-bottom: 56px;
-    }
-    .ws-eyebrow {
-      font-size: .78rem; font-weight: 600; color: var(--accent);
-      letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .ws-header h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 800; letter-spacing: -.035em;
-      line-height: 1.1; margin-bottom: 20px;
-      max-width: 700px;
-    }
-    .ws-header p {
-      color: var(--muted); font-size: 1.1rem;
-      max-width: 520px; line-height: 1.75;
-      margin-bottom: 36px;
-    }
+.feature-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(145,167,255,.08);
+  border:1px solid rgba(145,167,255,.15);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:22px;
+}
+.feature-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8}
+.feature-card h3{
+  font-family:'Manrope',sans-serif;
+  font-size:1.15rem;font-weight:700;
+  margin-bottom:10px;letter-spacing:-.01em;
+}
+.feature-card p{
+  color:var(--muted);font-size:.92rem;line-height:1.7;
+}
 
-    /* workspace grid */
-    .ws-grid {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 24px;
-      align-items: start;
-    }
+/* === CTA SECTION === */
+.cta-section{
+  padding:100px 0;
+  border-top:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(145,167,255,.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-inner{
+  position:relative;z-index:1;
+  text-align:center;max-width:560px;margin:0 auto;
+}
+.cta-inner h2{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:800;letter-spacing:-.03em;margin-bottom:16px;
+}
+.cta-inner p{color:var(--muted);margin-bottom:36px;font-size:1.05rem}
 
-    /* chat panel */
-    .chat-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      height: 640px;
-    }
-    .chat-topbar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--line);
-      background: var(--panel2);
-    }
-    .chat-topbar-left {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .chat-avatar {
-      width: 32px; height: 32px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      font-size: .7rem; font-weight: 800; color: #0a0a0e;
-    }
-    .chat-title {
-      font-family: var(--font-display);
-      font-size: .92rem; font-weight: 700;
-      letter-spacing: -.01em;
-    }
-    .chat-sub {
-      font-size: .72rem; color: var(--muted);
-      display: flex; align-items: center; gap: 6px;
-      margin-top: 1px;
-    }
-    .chat-sub .live-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px rgba(168, 231, 193, .6);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+/* === FOOTER === */
+footer{
+  padding:40px 0;border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-copy{color:var(--muted);font-size:.85rem}
+.footer-links{display:flex;gap:24px}
+.footer-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:.85rem;transition:color .2s;
+}
+.footer-links a:hover{color:var(--text)}
 
-    .chat-body {
-      flex: 1; padding: 28px 24px;
-      overflow-y: auto;
-      display: flex; flex-direction: column; gap: 20px;
-      scroll-behavior: smooth;
-    }
-    .chat-body::-webkit-scrollbar { width: 4px; }
-    .chat-body::-webkit-scrollbar-track { background: transparent; }
-    .chat-body::-webkit-scrollbar-thumb { background: var(--line2); border-radius: 4px; }
-
-    .msg {
-      max-width: 82%;
-      animation: fadeUp .4s var(--ease);
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .msg-user {
-      align-self: flex-end;
-    }
-    .msg-user .msg-bubble {
-      background: linear-gradient(135deg, rgba(145, 167, 255, .18), rgba(183, 168, 255, .12));
-      border: 1px solid rgba(145, 167, 255, .18);
-      border-radius: 16px 16px 4px 16px;
-      padding: 14px 18px;
-      font-size: .92rem; line-height: 1.6;
-      color: var(--text);
-    }
-    .msg-ai {
-      align-self: flex-start;
-    }
-    .msg-ai .msg-bubble {
-      background: var(--panel2);
-      border: 1px solid var(--line);
-      border-radius: 16px 16px 16px 4px;
-      padding: 14px 18px;
-      font-size: .92rem; line-height: 1.6;
-      color: var(--soft);
-    }
-    .msg-ai .msg-bubble strong {
-      color: var(--text); font-weight: 600;
-    }
-
-    .chat-input-area {
-      padding: 16px 20px 20px;
-      border-top: 1px solid var(--line);
-      background: var(--panel2);
-    }
-    .chat-input-wrap {
-      display: flex; align-items: center; gap: 10px;
-      background: var(--bg);
-      border: 1px solid var(--line2);
-      border-radius: 12px;
-      padding: 6px 6px 6px 18px;
-      transition: border-color .2s;
-    }
-    .chat-input-wrap:focus-within {
-      border-color: rgba(145, 167, 255, .4);
-    }
-    .chat-input-wrap input {
-      flex: 1; background: transparent; border: none;
-      color: var(--text); font-family: inherit;
-      font-size: .92rem; outline: none;
-      padding: 10px 0;
-    }
-    .chat-input-wrap input::placeholder { color: var(--muted); }
-    .chat-send {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all .25s var(--ease);
-      flex-shrink: 0;
-    }
-    .chat-send:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(145, 167, 255, .3); }
-    .chat-send svg { width: 16px; height: 16px; stroke: #0a0a0e; fill: none; stroke-width: 2.2; }
-
-    /* intelligence sidebar */
-    .intel-panel {
-      display: flex; flex-direction: column; gap: 16px;
-    }
-    .intel-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-    .intel-card-title {
-      font-size: .68rem; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 18px;
-    }
-    .intel-signal {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .intel-signal:last-child { border-bottom: none; }
-    .intel-signal-label {
-      font-size: .8rem; color: var(--muted); font-weight: 500;
-    }
-    .intel-signal-value {
-      font-family: var(--font-display);
-      font-size: .92rem; font-weight: 700;
-      color: var(--text); letter-spacing: -.01em;
-    }
-
-    .score-ring {
-      display: flex; align-items: center; gap: 20px;
-    }
-    .score-circle {
-      position: relative; width: 80px; height: 80px; flex-shrink: 0;
-    }
-    .score-circle svg { transform: rotate(-90deg); width: 80px; height: 80px; }
-    .score-circle .bg { fill: none; stroke: var(--line2); stroke-width: 6; }
-    .score-circle .fg {
-      fill: none; stroke: url(#scoreGrad); stroke-width: 6;
-      stroke-linecap: round;
-      stroke-dasharray: 201;
-      stroke-dashoffset: 22;
-      transition: stroke-dashoffset 1s var(--ease);
-    }
-    .score-number {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-display);
-      font-size: 1.3rem; font-weight: 800;
-      letter-spacing: -.03em;
-    }
-    .score-meta .score-label {
-      font-size: .72rem; color: var(--muted);
-      letter-spacing: .06em; text-transform: uppercase;
-      font-weight: 600; margin-bottom: 4px;
-    }
-    .score-meta .score-tier {
-      font-family: var(--font-display);
-      font-size: 1rem; font-weight: 700;
-      color: var(--green);
-    }
-
-    .action-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .action-item:last-child { border-bottom: none; }
-    .action-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent); margin-top: 8px; flex-shrink: 0;
-    }
-    .action-text {
-      font-size: .88rem; color: var(--soft); line-height: 1.55;
-    }
-    .action-text strong { color: var(--text); font-weight: 600; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .ws-grid { grid-template-columns: 1fr; }
-      .chat-panel { height: 520px; }
-    }
-    @media (max-width: 900px) {
-      .cap-grid { grid-template-columns: 1fr; }
-      .flow-step { padding: 16px 0; border-right: none; border-bottom: 1px solid var(--line); width: 100%; }
-      .flow-step:last-child { border-bottom: none; }
-      .layer-flow { flex-direction: column; }
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hero-home { padding: 140px 0 80px; min-height: auto; }
-      .hero-footnote { margin-top: 48px; }
-      .ind-header { flex-direction: column; align-items: flex-start; }
-      .section-layer, .section-capabilities, .section-industries, .section-cta { padding: 80px 0; }
-      .workspace { padding: 110px 0 60px; }
-    }
-    @media (max-width: 640px) {
-      .nav-lang { display: none; }
-      .hero-home h1 { font-size: clamp(2.4rem, 10vw, 3.2rem); }
-      .msg { max-width: 92%; }
-      .chat-panel { height: 460px; }
-      footer { flex-direction: column; text-align: center; }
-    }
-  </style>
+/* === RESPONSIVE === */
+@media(max-width:900px){
+  .features-grid{grid-template-columns:1fr 1fr}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hero{padding:130px 0 70px}
+  .features-grid{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+  .btn-group{flex-direction:column}
+  .btn{justify-content:center}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
 
-<!-- ==================== NAV ==================== -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
@@ -611,244 +302,133 @@
       LEGMAO AI
     </a>
     <div class="nav-links">
-      <a href="#" class="active">Platform</a>
-      <a href="#">Intelligence</a>
-      <a href="#">Industries</a>
-      <a href="#">Company</a>
+      <a href="#features">Platform</a>
+      <a href="#metrics">Results</a>
+      <a href="#cta">Contact</a>
     </div>
-    <div style="display:flex;align-items:center;gap:20px">
-      <a href="#" class="nav-lang">EN</a>
-      <a href="#contact" class="nav-cta">Talk to us</a>
-    </div>
+    <a href="#cta" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
-<!-- ==================== HOME HERO ==================== -->
-<section class="hero-home">
+<!-- HERO -->
+<section class="hero">
   <div class="container">
-    <div class="hero-eyebrow">AI Growth Infrastructure</div>
-    <h1>
-      AI that moves<br>
-      <span class="grad">business forward.</span>
-    </h1>
-    <p>
-      Turn customer signals into intelligent conversations, qualified opportunities and the next best business action.
-    </p>
-    <a href="#workspace" class="hero-link">
-      See AI in action
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
-    <div class="hero-footnote">Intelligence · Conversation · Action</div>
-  </div>
-</section>
-
-<!-- ==================== INTELLIGENCE LAYER ==================== -->
-<section class="section-layer">
-  <div class="container">
-    <div class="layer-eyebrow">The Intelligence Layer</div>
-    <h2 class="layer-title">
-      Not another chatbot.<br>
-      <span class="dim">An intelligent growth layer.</span>
-    </h2>
-    <p class="layer-desc">
-      LEGMAO AI connects customer signals, conversations and business workflows — so businesses can understand faster, respond smarter and act sooner.
-    </p>
-    <div class="layer-flow">
-      <div class="flow-step">
-        <span class="step-label">Signal</span>
-        <span class="step-desc">Detect</span>
+    <div class="hero-content">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Intelligence in Motion
       </div>
-      <div class="flow-step">
-        <span class="step-label">Understand</span>
-        <span class="step-desc">Comprehend</span>
-      </div>
-      <div class="flow-step">
-        <span class="step-label">Qualify</span>
-        <span class="step-desc">Score</span>
-      </div>
-      <div class="flow-step">
-        <span class="step-label">Act</span>
-        <span class="step-desc">Recommend</span>
+      <h1>Growth infrastructure for the <span class="grad">AI-native</span> era.</h1>
+      <p>LEGMAO AI unifies customer intelligence, predictive automation, and real-time decisioning into one adaptive platform — so your business moves as fast as your data.</p>
+      <div class="btn-group">
+        <a href="#cta" class="btn btn-primary">
+          Start Building
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#features" class="btn btn-ghost">
+          Explore Platform
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CAPABILITIES ==================== -->
-<section class="section-capabilities">
+<!-- METRICS -->
+<section class="metrics" id="metrics">
   <div class="container">
-    <div class="cap-grid">
-      <div class="cap-item">
-        <div class="cap-num">01</div>
-        <h3>Customer Intelligence</h3>
-        <p>Understand what customers actually want — intent, budget, timeline, and preference — surfaced automatically from every interaction.</p>
+    <div class="metrics-grid">
+      <div>
+        <div class="metric-value">3.2×</div>
+        <div class="metric-label">Revenue Lift</div>
       </div>
-      <div class="cap-item">
-        <div class="cap-num">02</div>
-        <h3>AI Conversation</h3>
-        <p>Engage customers naturally across every conversation. Context-aware, always on-brand, and fluent in the language of your business.</p>
+      <div>
+        <div class="metric-value">94%</div>
+        <div class="metric-label">Prediction Accuracy</div>
       </div>
-      <div class="cap-item">
-        <div class="cap-num">03</div>
-        <h3>Opportunity Intelligence</h3>
-        <p>Identify high-intent opportunities automatically. Every signal scored, ranked, and routed to the right next step.</p>
+      <div>
+        <div class="metric-value">12ms</div>
+        <div class="metric-label">Decision Latency</div>
       </div>
-      <div class="cap-item">
-        <div class="cap-num">04</div>
-        <h3>Next Best Action</h3>
-        <p>Turn intelligence into the right business action — connect with sales, recommend a property, trigger a workflow, or follow up.</p>
+      <div>
+        <div class="metric-value">500+</div>
+        <div class="metric-label">Enterprise Deployments</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== INDUSTRIES ==================== -->
-<section class="section-industries">
+<!-- FEATURES -->
+<section class="features" id="features">
   <div class="container">
-    <div class="ind-header">
-      <h2>Built for<br>businesses that move.</h2>
-      <p class="ind-sub">From real estate to hospitality — LEGMAO AI adapts to the signals that matter in your industry.</p>
+    <div class="section-header">
+      <h2>Everything you need to grow intelligently.</h2>
+      <p>A unified layer that turns raw signals into compounding advantage — no data science team required.</p>
     </div>
-    <div class="ind-list">
-      <a href="#" class="ind-tag featured">Real Estate</a>
-      <a href="#" class="ind-tag">Automotive</a>
-      <a href="#" class="ind-tag">E-commerce</a>
-      <a href="#" class="ind-tag">Hospitality</a>
-      <a href="#" class="ind-tag">Restaurants</a>
-      <a href="#" class="ind-tag">Financial Services</a>
-      <a href="#" class="ind-tag">Healthcare</a>
-      <a href="#" class="ind-tag">Education</a>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== WORKSPACE / LIVE DEMO ==================== -->
-<section class="workspace" id="workspace">
-  <div class="container">
-    <div class="ws-header">
-      <div class="ws-eyebrow">Live Intelligence</div>
-      <h1>Watch a customer signal become a business opportunity.</h1>
-      <p>See how AI turns customer conversations into business decisions — in real time.</p>
-    </div>
-
-    <div class="ws-grid">
-      <!-- CHAT PANEL -->
-      <div class="chat-panel">
-        <div class="chat-topbar">
-          <div class="chat-topbar-left">
-            <div class="chat-avatar">AI</div>
-            <div>
-              <div class="chat-title">AI Sales Assistant</div>
-              <div class="chat-sub">
-                <span class="live-dot"></span>
-                Live intelligence
-              </div>
-            </div>
-          </div>
-          <div style="font-size:.7rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600">Demo</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-
-        <div class="chat-body" id="chatBody">
-          <!-- messages injected by JS -->
-        </div>
-
-        <div class="chat-input-area">
-          <div class="chat-input-wrap">
-            <input type="text" id="chatInput" placeholder="Type a message…" autocomplete="off">
-            <button class="chat-send" id="chatSend" aria-label="Send message">
-              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-          </div>
-        </div>
+        <h3>Adaptive Intelligence</h3>
+        <p>Self-learning models that continuously refine their understanding of your customers, market, and operations — without manual retraining.</p>
       </div>
-
-      <!-- INTELLIGENCE SIDEBAR -->
-      <div class="intel-panel">
-        <!-- CUSTOMER SIGNAL -->
-        <div class="intel-card">
-          <div class="intel-card-title">Customer Signal</div>
-          <div class="intel-signal">
-            <span class="intel-signal-label">Intent</span>
-            <span class="intel-signal-value" id="sigIntent">Investment</span>
-          </div>
-          <div class="intel-signal">
-            <span class="intel-signal-label">Budget</span>
-            <span class="intel-signal-value" id="sigBudget">$150K</span>
-          </div>
-          <div class="intel-signal">
-            <span class="intel-signal-label">Location</span>
-            <span class="intel-signal-value" id="sigLocation">BKK1</span>
-          </div>
-          <div class="intel-signal">
-            <span class="intel-signal-label">Timeline</span>
-            <span class="intel-signal-value" id="sigTimeline">1–3 months</span>
-          </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-
-        <!-- OPPORTUNITY SCORE -->
-        <div class="intel-card">
-          <div class="intel-card-title">Opportunity Score</div>
-          <div class="score-ring">
-            <div class="score-circle">
-              <svg viewBox="0 0 80 80">
-                <defs>
-                  <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#91a7ff"/>
-                    <stop offset="100%" style="stop-color:#a8e7c1"/>
-                  </linearGradient>
-                </defs>
-                <circle class="bg" cx="40" cy="40" r="32"/>
-                <circle class="fg" cx="40" cy="40" r="32"/>
-              </svg>
-              <div class="score-number" id="scoreNumber">89</div>
-            </div>
-            <div class="score-meta">
-              <div class="score-label">Rating</div>
-              <div class="score-tier" id="scoreTier">High Intent</div>
-            </div>
-          </div>
+        <h3>Real-Time Decisioning</h3>
+        <p>Sub-20ms inference at the edge. Trigger personalized actions, pricing, and content the moment signals arrive — not hours later.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
-
-        <!-- NEXT BEST ACTION -->
-        <div class="intel-card">
-          <div class="intel-card-title">Next Best Action</div>
-          <div class="action-item">
-            <div class="action-dot"></div>
-            <div class="action-text"><strong>Connect with sales</strong> — route to senior agent</div>
-          </div>
-          <div class="action-item">
-            <div class="action-dot"></div>
-            <div class="action-text"><strong>Recommend 3 properties</strong> — BKK1, $120K–$180K</div>
-          </div>
-          <div class="action-item">
-            <div class="action-dot"></div>
-            <div class="action-text"><strong>Send investment guide</strong> — Phnom Penh market report</div>
-          </div>
+        <h3>Unified Data Layer</h3>
+        <p>Connect every source — CRM, product, billing, support — into a single living profile. No pipelines to maintain, no schema to manage.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg>
         </div>
+        <h3>Predictive Automation</h3>
+        <p>Anticipate churn, expansion, and intent before they surface. Deploy workflows that act on predictions — automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Enterprise Governance</h3>
+        <p>SOC 2 Type II, GDPR, and HIPAA ready. Full audit trails, role-based access, and data residency controls built in from day one.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>Growth Analytics</h3>
+        <p>Board-ready dashboards that tie every decision to revenue impact. Understand exactly what's working — and what to double down on.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CTA ==================== -->
-<section class="section-cta" id="contact">
+<!-- CTA -->
+<section class="cta-section" id="cta">
   <div class="container">
     <div class="cta-inner">
-      <h2>See what AI can do for your business.</h2>
-      <p>Build what comes next. Let's talk about how LEGMAO AI can turn your customer signals into growth.</p>
-      <a href="#" class="cta-link">
-        Start a conversation
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
+      <h2>Ready to move at the speed of intelligence?</h2>
+      <p>Join the forward-thinking teams using LEGMAO AI to turn data into durable growth.</p>
+      <div class="btn-group" style="justify-content:center">
+        <a href="#" class="btn btn-primary">
+          Book a Demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost">Talk to Sales</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- FOOTER -->
 <div class="container">
   <footer>
     <div class="footer-copy">© 2025 LEGMAO AI. All rights reserved.</div>
@@ -860,148 +440,6 @@
     </div>
   </footer>
 </div>
-
-<script>
-  /* ============================================================
-     CHAT DEMO — dynamic message flow
-     ============================================================ */
-  (function() {
-    const chatBody = document.getElementById('chatBody');
-    const chatInput = document.getElementById('chatInput');
-    const chatSend = document.getElementById('chatSend');
-
-    // message history
-    const messages = [
-      { role: 'user', text: "I'm looking for a condo in Phnom Penh." },
-      { role: 'ai', text: "Great. Are you looking for <strong>investment</strong> or <strong>personal use</strong>?" },
-      { role: 'user', text: "Investment. Around $150k." },
-      { role: 'ai', text: "Understood. Any preference on <strong>location</strong> or <strong>timeline</strong>?" },
-      { role: 'user', text: "BKK1 area. Looking to move in 1–3 months." },
-      { role: 'ai', text: "Perfect. I've qualified your request and I'm pulling the best matches now." }
-    ];
-
-    let msgIndex = 0;
-    let isTyping = false;
-
-    // render a single message
-    function renderMessage(msg) {
-      const div = document.createElement('div');
-      div.className = `msg msg-${msg.role}`;
-      const bubble = document.createElement('div');
-      bubble.className = 'msg-bubble';
-      bubble.innerHTML = msg.text;
-      div.appendChild(bubble);
-      chatBody.appendChild(div);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    // simulate typing indicator
-    function showTyping() {
-      const div = document.createElement('div');
-      div.className = 'msg msg-ai';
-      div.id = 'typingIndicator';
-      div.innerHTML = `<div class="msg-bubble" style="display:flex;gap:5px;align-items:center;padding:16px 22px">
-        <span style="width:6px;height:6px;border-radius:50%;background:var(--muted);animation:pulse 1.2s infinite"></span>
-        <span style="width:6px;height:6px;border-radius:50%;background:var(--muted);animation:pulse 1.2s .2s infinite"></span>
-        <span style="width:6px;height:6px;border-radius:50%;background:var(--muted);animation:pulse 1.2s .4s infinite"></span>
-      </div>`;
-      chatBody.appendChild(div);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function removeTyping() {
-      const el = document.getElementById('typingIndicator');
-      if (el) el.remove();
-    }
-
-    // play next message
-    function playNext() {
-      if (msgIndex >= messages.length) return;
-      const msg = messages[msgIndex];
-      if (msg.role === 'ai') {
-        showTyping();
-        setTimeout(() => {
-          removeTyping();
-          renderMessage(msg);
-          msgIndex++;
-          // update sidebar after final AI message
-          if (msgIndex === messages.length) {
-            updateSidebarFinal();
-          }
-        }, 900 + Math.random() * 400);
-      } else {
-        renderMessage(msg);
-        msgIndex++;
-        setTimeout(playNext, 500);
-      }
-    }
-
-    // initial render — show all user messages instantly, then AI
-    function initChat() {
-      chatBody.innerHTML = '';
-      msgIndex = 0;
-      // start the sequence
-      playNext();
-    }
-
-    // sidebar final update
-    function updateSidebarFinal() {
-      // already set to final values, but ensure animation
-      const scoreCircle = document.querySelector('.score-circle .fg');
-      if (scoreCircle) {
-        scoreCircle.style.strokeDashoffset = '22';
-      }
-    }
-
-    // send message
-    function sendMessage() {
-      const text = chatInput.value.trim();
-      if (!text || isTyping) return;
-      isTyping = true;
-      chatInput.value = '';
-      renderMessage({ role: 'user', text });
-      chatInput.focus();
-
-      // simulate AI response
-      setTimeout(() => {
-        showTyping();
-        setTimeout(() => {
-          removeTyping();
-          renderMessage({ role: 'ai', text: "Thanks for sharing. I'm analyzing your request and will have a tailored recommendation shortly." });
-          isTyping = false;
-        }, 1200);
-      }, 300);
-    }
-
-    // event listeners
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        sendMessage();
-      }
-    });
-
-    // initialize
-    if (chatBody) {
-      initChat();
-    }
-
-    // Intersection observer for workspace section to trigger animation
-    const workspace = document.getElementById('workspace');
-    if (workspace && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // already initialized, but could replay if desired
-          }
-        });
-      }, { threshold: 0.2 });
-      observer.observe(workspace);
-    }
-
-  })();
-</script>
 
 </body>
 </html>
