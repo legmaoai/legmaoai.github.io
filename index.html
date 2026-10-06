@@ -1,445 +1,4460 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="LEGMAO AI — intelligent growth infrastructure for modern businesses.">
-<title>LEGMAO AI — Intelligence in Motion</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#070708;
-  --panel:#0c0c0f;
-  --panel2:#101014;
-  --text:#f4f4f2;
-  --muted:#898990;
-  --soft:#b9b9c0;
-  --line:rgba(255,255,255,.085);
-  --line2:rgba(255,255,255,.14);
-  --accent:#91a7ff;
-  --accent2:#b7a8ff;
-  --green:#a8e7c1;
-  --ease:cubic-bezier(.22,1,.36,1);
-  --radius:16px;
-  --shadow:0 20px 40px -12px rgba(0,0,0,.8);
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="LEGMAO AI — AI Growth Infrastructure that turns customer signals into revenue opportunities.">
+  <meta name="theme-color" content="#07080b">
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'DM Sans',system-ui,-apple-system,sans-serif;
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
+  <title>LEGMAO AI — Intelligence that moves business forward</title>
 
-/* === LAYOUT === */
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* === NAV === */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(7,7,8,.82);
-  backdrop-filter:blur(20px) saturate(1.4);
-  -webkit-backdrop-filter:blur(20px) saturate(1.4);
-  border-bottom:1px solid var(--line);
-  transition:background .3s var(--ease);
-}
-.nav-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  height:72px;max-width:1200px;margin:0 auto;padding:0 24px;
-}
-.logo{
-  display:flex;align-items:center;gap:10px;
-  font-family:'Manrope',sans-serif;font-weight:800;
-  font-size:1.2rem;letter-spacing:-.02em;color:var(--text);
-  text-decoration:none;
-}
-.logo-mark{
-  width:28px;height:28px;border-radius:9px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex;align-items:center;justify-content:center;
-  font-size:.7rem;font-weight:800;color:#0a0a0e;
-  box-shadow:0 0 18px rgba(145,167,255,.25);
-}
-.nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{
-  color:var(--soft);text-decoration:none;font-size:.9rem;
-  font-weight:500;transition:color .2s var(--ease);
-}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{
-  padding:9px 22px;border-radius:10px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#0a0a0e;font-weight:700;font-size:.85rem;
-  text-decoration:none;transition:all .25s var(--ease);
-  box-shadow:0 0 24px rgba(145,167,255,.2);
-}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 36px rgba(145,167,255,.35)}
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-/* === HERO === */
-.hero{
-  padding:160px 0 100px;position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);
-  width:900px;height:900px;border-radius:50%;
-  background:radial-gradient(circle,rgba(145,167,255,.07) 0%,transparent 70%);
-  pointer-events:none;
-}
-.hero::after{
-  content:'';position:absolute;bottom:-20%;right:-10%;
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(183,168,255,.05) 0%,transparent 70%);
-  pointer-events:none;
-}
-.hero-content{position:relative;z-index:1;max-width:760px}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:6px 16px;border-radius:100px;
-  background:rgba(145,167,255,.08);
-  border:1px solid rgba(145,167,255,.18);
-  font-size:.78rem;font-weight:600;color:var(--accent);
-  letter-spacing:.03em;text-transform:uppercase;
-  margin-bottom:28px;
-}
-.badge-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 8px rgba(168,231,193,.6);
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  <style>
+    :root{
+      --bg:#07080b;
+      --bg2:#090a0f;
+      --panel:#0d0f14;
+      --panel2:#11131a;
+      --text:#f4f5f7;
+      --muted:#858994;
+      --soft:#bfc2cc;
+      --line:rgba(255,255,255,.085);
+      --line2:rgba(255,255,255,.15);
+      --blue:#91a7ff;
+      --blue2:#6f83ff;
+      --violet:#b7a8ff;
+      --green:#a7e5c0;
+      --ease:cubic-bezier(.2,.72,.2,1);
+      --max:1240px;
+    }
 
-h1{
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(2.6rem,6vw,4.2rem);
-  font-weight:800;line-height:1.08;
-  letter-spacing:-.035em;
-  margin-bottom:24px;
-}
-h1 .grad{
-  background:linear-gradient(135deg,var(--accent),var(--accent2),var(--green));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.hero p{
-  font-size:1.15rem;color:var(--muted);
-  max-width:560px;line-height:1.7;margin-bottom:40px;
-}
+    *{
+      box-sizing:border-box;
+    }
 
-.btn-group{display:flex;gap:14px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:14px 30px;border-radius:12px;
-  font-weight:600;font-size:.95rem;
-  text-decoration:none;transition:all .3s var(--ease);
-  cursor:pointer;border:none;font-family:inherit;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#0a0a0e;
-  box-shadow:0 0 30px rgba(145,167,255,.25);
-}
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 48px rgba(145,167,255,.4);
-}
-.btn-ghost{
-  background:transparent;color:var(--soft);
-  border:1px solid var(--line2);
-}
-.btn-ghost:hover{
-  border-color:rgba(255,255,255,.3);
-  color:var(--text);
-  background:rgba(255,255,255,.03);
-}
-.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
-.btn:hover svg{transform:translateX(3px)}
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:100px;
+    }
 
-/* === METRICS STRIP === */
-.metrics{
-  padding:70px 0;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.metrics-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:40px;text-align:center;
-}
-.metric-value{
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(1.8rem,3.5vw,2.6rem);
-  font-weight:800;letter-spacing:-.03em;
-  background:linear-gradient(135deg,var(--text),var(--soft));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.metric-label{
-  font-size:.82rem;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.08em;
-  font-weight:500;margin-top:6px;
-}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"DM Sans",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
 
-/* === FEATURES === */
-.features{padding:110px 0}
-.section-header{text-align:center;max-width:640px;margin:0 auto 64px}
-.section-header h2{
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(1.8rem,3.5vw,2.6rem);
-  font-weight:800;letter-spacing:-.03em;
-  margin-bottom:16px;
-}
-.section-header p{color:var(--muted);font-size:1.05rem;line-height:1.7}
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:100;
+      opacity:.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+      mix-blend-mode:soft-light;
+    }
 
-.features-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.feature-card{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:36px 30px;
-  transition:all .35s var(--ease);
-  position:relative;overflow:hidden;
-}
-.feature-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(145,167,255,.3),transparent);
-  opacity:0;transition:opacity .35s var(--ease);
-}
-.feature-card:hover{
-  background:var(--panel2);
-  border-color:var(--line2);
-  transform:translateY(-4px);
-  box-shadow:var(--shadow);
-}
-.feature-card:hover::before{opacity:1}
+    ::selection{
+      background:#dce3ff;
+      color:#08090d;
+    }
 
-.feature-icon{
-  width:44px;height:44px;border-radius:12px;
-  background:rgba(145,167,255,.08);
-  border:1px solid rgba(145,167,255,.15);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:22px;
-}
-.feature-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8}
-.feature-card h3{
-  font-family:'Manrope',sans-serif;
-  font-size:1.15rem;font-weight:700;
-  margin-bottom:10px;letter-spacing:-.01em;
-}
-.feature-card p{
-  color:var(--muted);font-size:.92rem;line-height:1.7;
-}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
-/* === CTA SECTION === */
-.cta-section{
-  padding:100px 0;
-  border-top:1px solid var(--line);
-  position:relative;overflow:hidden;
-}
-.cta-section::before{
-  content:'';position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(145,167,255,.06) 0%,transparent 65%);
-  pointer-events:none;
-}
-.cta-inner{
-  position:relative;z-index:1;
-  text-align:center;max-width:560px;margin:0 auto;
-}
-.cta-inner h2{
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(1.8rem,3.5vw,2.6rem);
-  font-weight:800;letter-spacing:-.03em;margin-bottom:16px;
-}
-.cta-inner p{color:var(--muted);margin-bottom:36px;font-size:1.05rem}
+    button{
+      font:inherit;
+    }
 
-/* === FOOTER === */
-footer{
-  padding:40px 0;border-top:1px solid var(--line);
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:16px;
-}
-.footer-copy{color:var(--muted);font-size:.85rem}
-.footer-links{display:flex;gap:24px}
-.footer-links a{
-  color:var(--muted);text-decoration:none;
-  font-size:.85rem;transition:color .2s;
-}
-.footer-links a:hover{color:var(--text)}
+    .wrap{
+      width:min(var(--max),calc(100% - 64px));
+      margin:auto;
+    }
 
-/* === RESPONSIVE === */
-@media(max-width:900px){
-  .features-grid{grid-template-columns:1fr 1fr}
-  .metrics-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:640px){
-  .nav-links{display:none}
-  .hero{padding:130px 0 70px}
-  .features-grid{grid-template-columns:1fr}
-  .metrics-grid{grid-template-columns:repeat(2,1fr);gap:28px}
-  .btn-group{flex-direction:column}
-  .btn{justify-content:center}
-  footer{flex-direction:column;text-align:center}
-}
-</style>
+    .skip{
+      position:absolute;
+      left:-999px;
+      top:8px;
+      z-index:200;
+      background:#fff;
+      color:#000;
+      padding:10px 14px;
+    }
+
+    .skip:focus{
+      left:10px;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav{
+      position:fixed;
+      z-index:80;
+      top:13px;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(1280px,calc(100% - 28px));
+      height:64px;
+      padding:0 13px 0 21px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      border:1px solid var(--line);
+      border-radius:17px;
+
+      background:rgba(8,9,13,.78);
+      backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
+    }
+
+    .logo{
+      font:800 16px/1 Manrope,Arial,sans-serif;
+      letter-spacing:-.055em;
+      white-space:nowrap;
+    }
+
+    .logo i{
+      font-style:normal;
+      color:var(--blue);
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:30px;
+      font-size:12px;
+      color:#858894;
+    }
+
+    .navlinks a{
+      transition:.25s;
+    }
+
+    .navlinks a:hover{
+      color:#fff;
+    }
+
+    .navright{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .lang{
+      position:relative;
+    }
+
+    .lang summary{
+      list-style:none;
+      cursor:pointer;
+      color:#c3c5ce;
+      font-size:11px;
+      padding:10px 11px;
+      border:1px solid transparent;
+      border-radius:9px;
+    }
+
+    .lang summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .lang summary:after{
+      content:"⌄";
+      margin-left:7px;
+      color:#777b88;
+    }
+
+    .lang[open] summary{
+      border-color:var(--line);
+    }
+
+    .langmenu{
+      position:absolute;
+      top:43px;
+      right:0;
+      width:175px;
+      max-height:60vh;
+      overflow:auto;
+
+      padding:6px;
+
+      border:1px solid var(--line2);
+      border-radius:12px;
+
+      background:#111219;
+      box-shadow:0 18px 45px #0009;
+    }
+
+    .langmenu a{
+      display:flex;
+      padding:9px;
+      border-radius:7px;
+
+      color:#9da0aa;
+      font-size:11px;
+
+      transition:.2s;
+    }
+
+    .langmenu a:hover,
+    .langmenu a[aria-current="true"]{
+      background:#1a1c25;
+      color:#fff;
+    }
+
+    .navcta{
+      padding:11px 14px;
+      border-radius:9px;
+
+      background:#f2f3f6;
+      color:#08090d;
+
+      font-size:11px;
+      font-weight:700;
+
+      transition:.25s;
+    }
+
+    .navcta:hover{
+      background:#fff;
+      transform:translateY(-2px);
+    }
+
+    .menuToggle{
+      display:none;
+      padding:8px 10px;
+
+      background:none;
+      color:#fff;
+
+      border:1px solid var(--line);
+      border-radius:9px;
+
+      cursor:pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:100svh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      isolation:isolate;
+
+      padding:150px 0 95px;
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-3;
+
+      background:
+        radial-gradient(
+          ellipse at 92% 18%,
+          rgba(85,91,210,.18),
+          transparent 35%
+        ),
+        radial-gradient(
+          ellipse at 5% 80%,
+          rgba(54,76,174,.12),
+          transparent 34%
+        ),
+        linear-gradient(
+          115deg,
+          #08090c 5%,
+          #08090e 65%,
+          #0c0d18
+        );
+    }
+
+    .heroGlow{
+      position:absolute;
+      z-index:-2;
+
+      width:65vw;
+      height:65vw;
+
+      right:-17vw;
+      top:12%;
+
+      border-radius:50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(100,116,255,.09),
+          transparent 68%
+        );
+
+      filter:blur(22px);
+    }
+
+    .heroLines{
+      position:absolute;
+      z-index:-1;
+
+      width:100%;
+      height:57%;
+
+      left:0;
+      bottom:5%;
+
+      opacity:.85;
+      pointer-events:none;
+    }
+
+    .heroLines path{
+      fill:none;
+      stroke:url(#wave);
+      stroke-width:1.15;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .heroLines path:nth-child(2){
+      opacity:.42;
+      stroke-width:.8;
+    }
+
+    .heroLines path:nth-child(3){
+      opacity:.24;
+      stroke-width:.8;
+    }
+
+    .heroContent{
+      position:relative;
+      z-index:2;
+      max-width:930px;
+      padding-bottom:65px;
+    }
+
+    .eyebrow,
+    .kicker{
+      font-size:10px;
+      line-height:1.4;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:#8e94ae;
+    }
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin-bottom:25px;
+    }
+
+    .eyebrow:before{
+      content:"";
+      width:22px;
+      height:1px;
+      background:var(--blue);
+    }
+
+    h1,
+    h2,
+    h3{
+      font-family:Manrope,Arial,sans-serif;
+    }
+
+    h1{
+      max-width:930px;
+      margin:0;
+
+      font-size:clamp(56px,8vw,108px);
+      line-height:.99;
+      letter-spacing:-.075em;
+      font-weight:600;
+    }
+
+    h1 span{
+      display:block;
+      color:#c5c8d4;
+    }
+
+    .heroLead{
+      margin:31px 0 12px;
+
+      font-size:clamp(18px,2vw,25px);
+      line-height:1.45;
+      letter-spacing:-.025em;
+
+      color:#b9bcc8;
+    }
+
+    .heroSub{
+      max-width:590px;
+      margin:0;
+
+      color:#7f828e;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .heroActions{
+      display:flex;
+      align-items:center;
+      gap:27px;
+      margin-top:39px;
+    }
+
+    .textbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:13px;
+
+      padding-bottom:10px;
+
+      color:#dce2ff;
+
+      border-bottom:1px solid rgba(145,167,255,.55);
+
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.16em;
+
+      transition:.25s;
+    }
+
+    .textbtn span{
+      font-size:17px;
+      line-height:1;
+    }
+
+    .textbtn:hover{
+      gap:19px;
+      border-color:#fff;
+    }
+
+    .secondaryLink{
+      color:#777b88;
+      font-size:11px;
+      transition:.2s;
+    }
+
+    .secondaryLink:hover{
+      color:#fff;
+    }
+
+    .heroFoot{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:26px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding-top:20px;
+      border-top:1px solid var(--line);
+    }
+
+    .heroFoot small{
+      color:#666a78;
+      font-size:9px;
+      letter-spacing:.12em;
+    }
+
+    .processMini{
+      display:flex;
+      align-items:center;
+      gap:clamp(10px,2.3vw,31px);
+
+      color:#9ca1b4;
+      font-size:9px;
+      letter-spacing:.13em;
+    }
+
+    .processMini b{
+      color:#6674b3;
+      font-weight:400;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    .section{
+      padding:135px 0;
+    }
+
+    .sectionHead{
+      max-width:870px;
+    }
+
+    .section h2,
+    .cta h2{
+      margin:17px 0 0;
+
+      font-size:clamp(42px,5.4vw,72px);
+      line-height:1.02;
+      letter-spacing:-.068em;
+      font-weight:600;
+    }
+
+    .section h2 span,
+    .cta h2 span{
+      color:#8d91a0;
+    }
+
+    .lead{
+      max-width:680px;
+      margin:23px 0 0;
+
+      color:#858894;
+
+      font-size:15px;
+      line-height:1.85;
+    }
+
+    /* =========================
+       SIGNAL FLOW
+    ========================= */
+
+    .signalFlow{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+
+      margin-top:70px;
+
+      border-top:1px solid var(--line2);
+      border-bottom:1px solid var(--line);
+    }
+
+    .flowStep{
+      position:relative;
+      min-height:190px;
+
+      padding:29px 25px 31px 0;
+    }
+
+    .flowStep:not(:last-child){
+      margin-right:24px;
+      border-right:1px solid var(--line);
+    }
+
+    .flowNo{
+      color:#5e6270;
+      font-size:9px;
+      letter-spacing:.12em;
+    }
+
+    .flowIcon{
+      width:43px;
+      height:43px;
+
+      display:grid;
+      place-items:center;
+
+      margin:22px 0 18px;
+
+      color:#aebaff;
+
+      border:1px solid rgba(145,167,255,.22);
+      border-radius:12px;
+
+      background:rgba(145,167,255,.035);
+    }
+
+    .flowIcon svg{
+      width:19px;
+      height:19px;
+
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.4;
+    }
+
+    .flowStep h3{
+      margin:0 0 8px;
+
+      font-size:18px;
+      font-weight:600;
+      letter-spacing:-.04em;
+    }
+
+    .flowStep p{
+      max-width:230px;
+      margin:0;
+
+      color:#767a87;
+
+      font-size:11px;
+      line-height:1.7;
+    }
+
+    .flowArrow{
+      position:absolute;
+      top:48px;
+      right:20px;
+
+      color:#4e5a89;
+      font-size:17px;
+    }
+
+    /* =========================
+       CAPABILITIES
+    ========================= */
+
+    .capSection{
+      padding-top:45px;
+    }
+
+    .capGrid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+
+      margin-top:57px;
+
+      border-top:1px solid var(--line);
+    }
+
+    .cap{
+      min-height:220px;
+
+      padding:31px 30px 34px 0;
+
+      border-bottom:1px solid var(--line);
+
+      transition:.3s;
+    }
+
+    .cap:nth-child(odd){
+      padding-right:40px;
+      border-right:1px solid var(--line);
+    }
+
+    .cap:nth-child(even){
+      padding-left:40px;
+    }
+
+    .capTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      margin-bottom:32px;
+    }
+
+    .capNo{
+      color:#5f6371;
+      font-size:10px;
+      letter-spacing:.12em;
+    }
+
+    .capMark{
+      width:31px;
+      height:31px;
+
+      display:grid;
+      place-items:center;
+
+      color:#9daeff;
+
+      border:1px solid var(--line2);
+      border-radius:50%;
+
+      font-size:13px;
+
+      transition:.25s;
+    }
+
+    .cap h3{
+      margin:0 0 10px;
+
+      font-size:23px;
+      font-weight:600;
+      letter-spacing:-.045em;
+    }
+
+    .cap p{
+      max-width:400px;
+      margin:0;
+
+      color:#7e818e;
+
+      font-size:12px;
+      line-height:1.8;
+    }
+
+    .cap:hover .capMark{
+      background:rgba(145,167,255,.1);
+      border-color:rgba(145,167,255,.45);
+      transform:rotate(12deg);
+    }
+
+    /* =========================
+       INTELLIGENCE WORKSPACE
+    ========================= */
+
+    .workspace{
+      padding:125px 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(19,20,34,.42),
+          transparent
+        );
+    }
+
+    .workspaceShell{
+      margin-top:50px;
+
+      overflow:hidden;
+
+      border:1px solid var(--line2);
+      border-radius:20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #101117,
+          #090a0e
+        );
+
+      box-shadow:0 35px 100px #0005;
+    }
+
+    .workspaceBar{
+      height:53px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 19px;
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .windowDots{
+      display:flex;
+      gap:5px;
+    }
+
+    .windowDots i{
+      width:6px;
+      height:6px;
+
+      border-radius:50%;
+
+      background:#444752;
+    }
+
+    .workspaceName{
+      color:#767a88;
+      font-size:9px;
+      letter-spacing:.1em;
+    }
+
+    .liveTag{
+      display:flex;
+      align-items:center;
+      gap:7px;
+
+      color:#8b8f9c;
+
+      font-size:9px;
+    }
+
+    .liveTag i{
+      width:5px;
+      height:5px;
+
+      border-radius:50%;
+
+      background:var(--green);
+      box-shadow:0 0 10px rgba(167,229,192,.55);
+    }
+
+    .workspaceGrid{
+      display:grid;
+      grid-template-columns:1fr .8fr;
+      min-height:460px;
+    }
+
+    .conversation{
+      padding:28px;
+      border-right:1px solid var(--line);
+    }
+
+    .panelLabel{
+      margin-bottom:19px;
+
+      color:#737786;
+
+      font-size:9px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .chatMessages{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+
+      min-height:230px;
+    }
+
+    .msg{
+      max-width:88%;
+
+      padding:11px 13px;
+
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:11px;
+
+      color:#c8cad4;
+
+      background:#171922;
+
+      font-size:11px;
+      line-height:1.7;
+
+      animation:fadeUp .4s var(--ease) both;
+    }
+
+    .msg.user{
+      align-self:flex-end;
+
+      color:#171923;
+      background:#e8eaf2;
+      border-color:#e8eaf2;
+    }
+
+    .chatControls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+
+      margin-top:22px;
+    }
+
+    .demoBtn{
+      padding:9px 11px;
+
+      cursor:pointer;
+
+      color:#c4c7d3;
+      background:transparent;
+
+      border:1px solid var(--line2);
+      border-radius:8px;
+
+      font-size:10px;
+
+      transition:.2s;
+    }
+
+    .demoBtn:hover,
+    .demoBtn:focus-visible{
+      color:#fff;
+      background:#20222e;
+      border-color:#6876b8;
+      outline:none;
+    }
+
+    .demoBtn.primary{
+      color:#0a0b0f;
+      background:#e8eaf2;
+      border-color:#e8eaf2;
+    }
+
+    .demoBtn.primary:hover{
+      background:#fff;
+    }
+
+    .demoHint{
+      margin-top:18px;
+
+      color:#555965;
+
+      font-size:9px;
+      line-height:1.65;
+    }
+
+    /* =========================
+       SIGNAL PANEL
+    ========================= */
+
+    .signalPanel{
+      display:flex;
+      flex-direction:column;
+
+      padding:28px;
+    }
+
+    .signalHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      margin-bottom:23px;
+    }
+
+    .signalHeader strong{
+      font:600 13px Manrope;
+    }
+
+    .stage{
+      color:#626675;
+
+      font-size:8px;
+      letter-spacing:.13em;
+    }
+
+    .signalTitle{
+      color:#727686;
+
+      font-size:9px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    .signalCards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+
+      margin-top:12px;
+
+      border-top:1px solid var(--line);
+      border-left:1px solid var(--line);
+    }
+
+    .signalCard{
+      min-height:82px;
+
+      padding:14px;
+
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .signalCard small{
+      display:block;
+
+      margin-bottom:9px;
+
+      color:#606473;
+
+      font-size:8px;
+      letter-spacing:.12em;
+    }
+
+    .signalCard strong{
+      color:#dfe1e8;
+
+      font:500 13px Manrope;
+    }
+
+    .scoreBox{
+      margin-top:26px;
+      padding-top:23px;
+
+      border-top:1px solid var(--line);
+    }
+
+    .scoreLabel{
+      color:#676b79;
+
+      font-size:8px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .score{
+      display:flex;
+      align-items:baseline;
+      gap:5px;
+
+      margin-top:12px;
+
+      font:700 70px/.9 Manrope;
+      letter-spacing:-.08em;
+    }
+
+    .score small{
+      color:#555a68;
+      font:500 12px "DM Sans";
+      letter-spacing:0;
+    }
+
+    .scoreState{
+      margin-top:9px;
+
+      color:var(--green);
+
+      font-size:9px;
+      letter-spacing:.08em;
+    }
+
+    .scoreBar{
+      height:3px;
+
+      margin-top:17px;
+
+      background:#202229;
+    }
+
+    .scoreBar i{
+      display:block;
+
+      width:0;
+      height:100%;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--violet)
+        );
+
+      box-shadow:0 0 18px rgba(145,167,255,.25);
+
+      transition:width .65s var(--ease);
+    }
+
+    .nextAction{
+      margin-top:23px;
+      padding:15px;
+
+      border:1px solid rgba(145,167,255,.13);
+      border-radius:11px;
+
+      background:rgba(145,167,255,.035);
+    }
+
+    .nextAction small{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#6f7484;
+
+      font-size:8px;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .nextAction p{
+      margin:0;
+
+      color:#c0c3ce;
+
+      font-size:10px;
+      line-height:1.65;
+    }
+
+    /* =========================
+       INDUSTRIES
+    ========================= */
+
+    .industryGrid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+
+      margin-top:60px;
+
+      border-top:1px solid var(--line);
+    }
+
+    .industry{
+      position:relative;
+
+      min-height:145px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 3px;
+
+      border-bottom:1px solid var(--line);
+
+      transition:.35s var(--ease);
+    }
+
+    .industry:nth-child(odd){
+      padding-right:40px;
+      border-right:1px solid var(--line);
+    }
+
+    .industry:nth-child(even){
+      padding-left:40px;
+    }
+
+    .industry strong{
+      font:600 25px Manrope;
+      letter-spacing:-.045em;
+    }
+
+    .industry small{
+      color:#555a68;
+
+      font-size:8px;
+      letter-spacing:.1em;
+
+      transition:.25s;
+    }
+
+    .industry:hover{
+      padding-left:13px;
+      color:#cbd3ff;
+    }
+
+    .industry:hover small{
+      color:#cbd3ff;
+      transform:translateX(-5px);
+    }
+
+    .industry.featured{
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(145,167,255,.08),
+          transparent 65%
+        );
+    }
+
+    .industry.featured:after{
+      content:"PRIMARY USE CASE";
+
+      position:absolute;
+      top:17px;
+      right:40px;
+
+      color:#6d78a7;
+
+      font-size:7px;
+      letter-spacing:.15em;
+    }
+
+    /* =========================
+       REAL ESTATE
+    ========================= */
+
+    .caseStudy{
+      padding-top:75px;
+    }
+
+    .caseCard{
+      display:grid;
+      grid-template-columns:1fr .8fr;
+
+      overflow:hidden;
+
+      margin-top:50px;
+
+      border:1px solid var(--line2);
+      border-radius:20px;
+
+      background:#0c0e13;
+    }
+
+    .caseCopy{
+      padding:45px;
+      border-right:1px solid var(--line);
+    }
+
+    .caseCopy h3{
+      margin:18px 0 18px;
+
+      font-size:clamp(34px,4vw,58px);
+      line-height:.98;
+      letter-spacing:-.065em;
+      font-weight:600;
+    }
+
+    .caseCopy p{
+      max-width:530px;
+      margin:0;
+
+      color:#858995;
+
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    .caseLink{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      margin-top:29px;
+
+      color:#dce2ff;
+
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.12em;
+    }
+
+    .caseVisual{
+      min-height:350px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+
+      padding:35px;
+
+      background:
+        radial-gradient(
+          circle at 70% 35%,
+          rgba(145,167,255,.1),
+          transparent 50%
+        );
+    }
+
+    .propertySignal{
+      padding:22px;
+
+      border:1px solid var(--line2);
+      border-radius:15px;
+
+      background:rgba(9,10,15,.75);
+      box-shadow:0 25px 70px #0005;
+    }
+
+    .propertySignalTop{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      margin-bottom:24px;
+    }
+
+    .propertySignalTop strong{
+      font:600 12px Manrope;
+    }
+
+    .propertySignalTop span{
+      color:var(--green);
+      font-size:8px;
+    }
+
+    .propertyRows{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      border-top:1px solid var(--line);
+      border-left:1px solid var(--line);
+    }
+
+    .propertyRow{
+      padding:15px;
+
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .propertyRow small{
+      display:block;
+
+      margin-bottom:7px;
+
+      color:#5d6270;
+
+      font-size:7px;
+      letter-spacing:.12em;
+    }
+
+    .propertyRow b{
+      color:#d6d9e1;
+
+      font:500 11px Manrope;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta{
+      padding:160px 0 175px;
+
+      border-top:1px solid var(--line);
+    }
+
+    .ctaInner{
+      max-width:850px;
+    }
+
+    .cta h2{
+      font-size:clamp(48px,6vw,82px);
+    }
+
+    .cta .lead{
+      max-width:610px;
+      margin-bottom:35px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:28px 0;
+
+      color:#565a66;
+
+      border-top:1px solid var(--line);
+
+      font-size:9px;
+      letter-spacing:.03em;
+    }
+
+    .footerlinks{
+      display:flex;
+      gap:20px;
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+
+      transition:
+        opacity .8s var(--ease),
+        transform .8s var(--ease);
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:none;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(8px);
+      }
+      to{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:900px){
+
+      .wrap{
+        width:min(var(--max),calc(100% - 40px));
+      }
+
+      .navlinks{
+        display:none;
+
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+
+        padding:10px;
+
+        border:1px solid var(--line);
+        border-radius:14px;
+
+        background:#0d0e13;
+        box-shadow:0 25px 60px #0008;
+      }
+
+      .navlinks.open{
+        display:flex;
+      }
+
+      .navlinks a{
+        width:100%;
+        padding:13px;
+      }
+
+      .menuToggle{
+        display:block;
+      }
+
+      .navcta{
+        display:none;
+      }
+
+      .hero{
+        padding-top:135px;
+      }
+
+      .heroContent{
+        max-width:100%;
+      }
+
+      .heroFoot{
+        position:relative;
+        bottom:auto;
+        margin-top:65px;
+      }
+
+      .signalFlow{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .flowStep{
+        border-bottom:1px solid var(--line);
+      }
+
+      .flowStep:nth-child(2){
+        border-right:0;
+      }
+
+      .flowStep:nth-child(3){
+        border-right:1px solid var(--line);
+      }
+
+      .workspaceGrid,
+      .caseCard{
+        grid-template-columns:1fr;
+      }
+
+      .conversation,
+      .caseCopy{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .industryGrid{
+        grid-template-columns:1fr;
+      }
+
+      .industry:nth-child(odd){
+        border-right:0;
+        padding-right:3px;
+      }
+
+      .industry:nth-child(even){
+        padding-left:3px;
+      }
+
+      .capGrid{
+        grid-template-columns:1fr;
+      }
+
+      .cap:nth-child(odd){
+        border-right:0;
+        padding-right:0;
+      }
+
+      .cap:nth-child(even){
+        padding-left:0;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .wrap{
+        width:calc(100% - 36px);
+      }
+
+      .nav{
+        width:calc(100% - 18px);
+        top:9px;
+      }
+
+      .logo{
+        font-size:15px;
+      }
+
+      .hero{
+        padding-top:125px;
+        padding-bottom:55px;
+      }
+
+      h1{
+        font-size:53px;
+      }
+
+      .heroLead{
+        font-size:18px;
+      }
+
+      .heroSub{
+        font-size:13px;
+      }
+
+      .heroActions{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+      }
+
+      .heroFoot{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:16px;
+      }
+
+      .processMini{
+        flex-wrap:wrap;
+      }
+
+      .section{
+        padding:105px 0;
+      }
+
+      .section h2{
+        font-size:42px;
+      }
+
+      .signalFlow{
+        grid-template-columns:1fr;
+      }
+
+      .flowStep,
+      .flowStep:nth-child(3){
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .flowStep:last-child{
+        border-bottom:0;
+      }
+
+      .flowArrow{
+        display:none;
+      }
+
+      .cap{
+        min-height:190px;
+      }
+
+      .workspace{
+        padding:100px 0;
+      }
+
+      .workspaceGrid{
+        min-height:0;
+      }
+
+      .conversation,
+      .signalPanel{
+        padding:22px;
+      }
+
+      .signalCards{
+        grid-template-columns:1fr;
+      }
+
+      .caseCopy{
+        padding:30px 22px;
+      }
+
+      .caseVisual{
+        padding:22px;
+      }
+
+      .propertyRows{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        padding:120px 0 130px;
+      }
+
+      .cta h2{
+        font-size:49px;
+      }
+
+      footer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:13px;
+      }
+
+      .footerlinks{
+        flex-wrap:wrap;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      *,
+      html{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+      }
+
+      .reveal{
+        opacity:1!important;
+        transform:none!important;
+      }
+    }
+  </style>
 </head>
-<body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="logo">
-      <span class="logo-mark">L</span>
-      LEGMAO AI
+<body id="top">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav class="nav" aria-label="Main navigation">
+
+  <a class="logo" href="#top">
+    LEGMAO <i>AI</i>
+  </a>
+
+  <div class="navlinks" id="navlinks">
+    <a href="#platform" data-i18n="navPlatform">Platform</a>
+    <a href="#intelligence" data-i18n="navIntelligence">Intelligence</a>
+    <a href="#industries" data-i18n="navIndustries">Industries</a>
+    <a href="#company" data-i18n="navCompany">Company</a>
+  </div>
+
+  <div class="navright">
+
+    <details class="lang" id="langPicker">
+      <summary id="langLabel">EN · English</summary>
+
+      <div class="langmenu">
+
+        <a href="?lang=en" data-lang="en">EN · English</a>
+        <a href="?lang=zh" data-lang="zh">中文 · 简体</a>
+        <a href="?lang=zh-tw" data-lang="zh-tw">繁體中文</a>
+        <a href="?lang=km" data-lang="km">ខ្មែរ · Khmer</a>
+        <a href="?lang=ja" data-lang="ja">日本語 · Japanese</a>
+        <a href="?lang=ko" data-lang="ko">한국어 · Korean</a>
+        <a href="?lang=th" data-lang="th">ไทย · Thai</a>
+        <a href="?lang=vi" data-lang="vi">Tiếng Việt</a>
+        <a href="?lang=id" data-lang="id">Bahasa Indonesia</a>
+        <a href="?lang=fr" data-lang="fr">Français</a>
+        <a href="?lang=es" data-lang="es">Español</a>
+        <a href="?lang=de" data-lang="de">Deutsch</a>
+
+      </div>
+    </details>
+
+    <button
+      class="menuToggle"
+      id="menuToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navlinks"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
+    <a
+      class="navcta"
+      href="mailto:legmao.ai@gmail.com"
+      data-i18n="talk"
+    >
+      Talk to us
     </a>
-    <div class="nav-links">
-      <a href="#features">Platform</a>
-      <a href="#metrics">Results</a>
-      <a href="#cta">Contact</a>
-    </div>
-    <a href="#cta" class="nav-cta">Get Started</a>
+
   </div>
 </nav>
 
-<!-- HERO -->
+
+<main id="main">
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Intelligence in Motion
+
+  <div class="heroGlow"></div>
+
+  <svg
+    class="heroLines"
+    viewBox="0 0 1600 700"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4559c5" stop-opacity=".08"/>
+        <stop offset="45%" stop-color="#8194ff" stop-opacity=".8"/>
+        <stop offset="75%" stop-color="#b7a8ff" stop-opacity=".8"/>
+        <stop offset="100%" stop-color="#6f83ff" stop-opacity=".1"/>
+      </linearGradient>
+    </defs>
+
+    <path d="M-40 570 C220 670 350 470 610 545 S970 690 1220 360 S1480 200 1660 95"/>
+    <path d="M-50 610 C230 710 360 505 620 570 S990 710 1240 395 S1490 230 1660 130"/>
+    <path d="M-30 650 C220 740 400 540 650 600 S1030 730 1260 430 S1500 260 1660 170"/>
+  </svg>
+
+  <div class="wrap">
+
+    <div class="heroContent reveal">
+
+      <div class="eyebrow" data-i18n="eyebrow">
+        AI Growth Infrastructure
       </div>
-      <h1>Growth infrastructure for the <span class="grad">AI-native</span> era.</h1>
-      <p>LEGMAO AI unifies customer intelligence, predictive automation, and real-time decisioning into one adaptive platform — so your business moves as fast as your data.</p>
-      <div class="btn-group">
-        <a href="#cta" class="btn btn-primary">
-          Start Building
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+      <h1 data-i18n="heroTitle">
+        AI that moves business
+        <span>forward.</span>
+      </h1>
+
+      <p class="heroLead" data-i18n="heroLead">
+        Turn customer signals into revenue opportunities.
+      </p>
+
+      <p class="heroSub" data-i18n="heroSub">
+        AI-powered conversations, qualification and next-best actions — built for modern businesses.
+      </p>
+
+      <div class="heroActions">
+
+        <a
+          href="#intelligence"
+          class="textbtn"
+          data-i18n="watch"
+        >
+          SEE AI IN ACTION <span>→</span>
         </a>
-        <a href="#features" class="btn btn-ghost">
-          Explore Platform
+
+        <a
+          href="mailto:legmao.ai@gmail.com"
+          class="secondaryLink"
+          data-i18n="contactLink"
+        >
+          Talk about your business ↗
         </a>
+
       </div>
+
     </div>
+
+    <div class="heroFoot">
+
+      <small data-i18n="heroFoot">
+        INTELLIGENCE · CONVERSATION · ACTION
+      </small>
+
+      <div class="processMini">
+        <span>SIGNAL</span>
+        <b>→</b>
+        <span>UNDERSTAND</span>
+        <b>→</b>
+        <span>QUALIFY</span>
+        <b>→</b>
+        <span>ACTION</span>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<!-- METRICS -->
-<section class="metrics" id="metrics">
-  <div class="container">
-    <div class="metrics-grid">
-      <div>
-        <div class="metric-value">3.2×</div>
-        <div class="metric-label">Revenue Lift</div>
+
+<!-- =========================
+     PLATFORM
+========================= -->
+
+<section class="section" id="platform">
+
+  <div class="wrap">
+
+    <div class="sectionHead reveal">
+
+      <div class="kicker" data-i18n="platformKicker">
+        The Intelligence Layer
       </div>
-      <div>
-        <div class="metric-value">94%</div>
-        <div class="metric-label">Prediction Accuracy</div>
-      </div>
-      <div>
-        <div class="metric-value">12ms</div>
-        <div class="metric-label">Decision Latency</div>
-      </div>
-      <div>
-        <div class="metric-value">500+</div>
-        <div class="metric-label">Enterprise Deployments</div>
-      </div>
+
+      <h2 data-i18n="platformTitle">
+        Not another chatbot.<br>
+        <span>An intelligent growth layer.</span>
+      </h2>
+
+      <p class="lead" data-i18n="platformLead">
+        LEGMAO AI connects customer signals, conversations and business workflows — so teams can understand faster, respond smarter and act sooner.
+      </p>
+
     </div>
+
+
+    <div class="signalFlow">
+
+      <div class="flowStep reveal">
+
+        <div class="flowNo">01</div>
+
+        <div class="flowIcon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+
+        <h3 data-i18n="flow1Title">
+          Customer signals
+        </h3>
+
+        <p data-i18n="flow1Copy">
+          Capture questions, preferences, urgency and buying intent.
+        </p>
+
+        <div class="flowArrow">→</div>
+
+      </div>
+
+
+      <div class="flowStep reveal">
+
+        <div class="flowNo">02</div>
+
+        <div class="flowIcon">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 12h16"/>
+            <path d="M12 4v16"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+
+        <h3 data-i18n="flow2Title">
+          AI understands
+        </h3>
+
+        <p data-i18n="flow2Copy">
+          Read the context behind conversations, not just keywords.
+        </p>
+
+        <div class="flowArrow">→</div>
+
+      </div>
+
+
+      <div class="flowStep reveal">
+
+        <div class="flowNo">03</div>
+
+        <div class="flowIcon">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 17l5-5 3 3 6-7"/>
+            <path d="M15 8h4v4"/>
+          </svg>
+        </div>
+
+        <h3 data-i18n="flow3Title">
+          Qualify opportunities
+        </h3>
+
+        <p data-i18n="flow3Copy">
+          Structure intent, budget, location and timeline into useful context.
+        </p>
+
+        <div class="flowArrow">→</div>
+
+      </div>
+
+
+      <div class="flowStep reveal">
+
+        <div class="flowNo">04</div>
+
+        <div class="flowIcon">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h12"/>
+            <path d="M13 6l6 6-6 6"/>
+          </svg>
+        </div>
+
+        <h3 data-i18n="flow4Title">
+          Recommend action
+        </h3>
+
+        <p data-i18n="flow4Copy">
+          Help teams decide what should happen next.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<!-- FEATURES -->
-<section class="features" id="features">
-  <div class="container">
-    <div class="section-header">
-      <h2>Everything you need to grow intelligently.</h2>
-      <p>A unified layer that turns raw signals into compounding advantage — no data science team required.</p>
+
+<!-- =========================
+     CAPABILITIES
+========================= -->
+
+<section class="section capSection">
+
+  <div class="wrap">
+
+    <div class="sectionHead reveal">
+
+      <div class="kicker" data-i18n="capKicker">
+        What LEGMAO AI does
+      </div>
+
+      <h2 data-i18n="capTitle">
+        Intelligence that makes work<br>
+        <span>move forward.</span>
+      </h2>
+
+      <p class="lead" data-i18n="capLead">
+        Turn individual customer interactions into a connected business process.
+      </p>
+
     </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+
+
+    <div class="capGrid">
+
+      <article class="cap reveal">
+
+        <div class="capTop">
+          <span class="capNo">01 / CUSTOMER</span>
+          <span class="capMark">+</span>
         </div>
-        <h3>Adaptive Intelligence</h3>
-        <p>Self-learning models that continuously refine their understanding of your customers, market, and operations — without manual retraining.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+
+        <h3 data-i18n="cap1Title">
+          Customer Intelligence
+        </h3>
+
+        <p data-i18n="cap1Copy">
+          Understand what customers need, what matters to them and what they may need next.
+        </p>
+
+      </article>
+
+
+      <article class="cap reveal">
+
+        <div class="capTop">
+          <span class="capNo">02 / CONVERSATION</span>
+          <span class="capMark">↗</span>
         </div>
-        <h3>Real-Time Decisioning</h3>
-        <p>Sub-20ms inference at the edge. Trigger personalized actions, pricing, and content the moment signals arrive — not hours later.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+
+        <h3 data-i18n="cap2Title">
+          AI Conversations
+        </h3>
+
+        <p data-i18n="cap2Copy">
+          Engage customers naturally with context-aware conversations instead of rigid scripts.
+        </p>
+
+      </article>
+
+
+      <article class="cap reveal">
+
+        <div class="capTop">
+          <span class="capNo">03 / OPPORTUNITY</span>
+          <span class="capMark">◎</span>
         </div>
-        <h3>Unified Data Layer</h3>
-        <p>Connect every source — CRM, product, billing, support — into a single living profile. No pipelines to maintain, no schema to manage.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg>
+
+        <h3 data-i18n="cap3Title">
+          Opportunity Intelligence
+        </h3>
+
+        <p data-i18n="cap3Copy">
+          Structure intent, budget, location and timing so teams can prioritize the right opportunities.
+        </p>
+
+      </article>
+
+
+      <article class="cap reveal">
+
+        <div class="capTop">
+          <span class="capNo">04 / ACTION</span>
+          <span class="capMark">→</span>
         </div>
-        <h3>Predictive Automation</h3>
-        <p>Anticipate churn, expansion, and intent before they surface. Deploy workflows that act on predictions — automatically.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Enterprise Governance</h3>
-        <p>SOC 2 Type II, GDPR, and HIPAA ready. Full audit trails, role-based access, and data residency controls built in from day one.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        </div>
-        <h3>Growth Analytics</h3>
-        <p>Board-ready dashboards that tie every decision to revenue impact. Understand exactly what's working — and what to double down on.</p>
-      </div>
+
+        <h3 data-i18n="cap4Title">
+          Next Best Action
+        </h3>
+
+        <p data-i18n="cap4Copy">
+          Recommend practical next steps such as prioritizing a lead, routing a conversation or preparing a follow-up.
+        </p>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="cta">
-  <div class="container">
-    <div class="cta-inner">
-      <h2>Ready to move at the speed of intelligence?</h2>
-      <p>Join the forward-thinking teams using LEGMAO AI to turn data into durable growth.</p>
-      <div class="btn-group" style="justify-content:center">
-        <a href="#" class="btn btn-primary">
-          Book a Demo
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+<!-- =========================
+     INTELLIGENCE DEMO
+========================= -->
+
+<section class="workspace" id="intelligence">
+
+  <div class="wrap">
+
+    <div class="sectionHead reveal">
+
+      <div class="kicker" data-i18n="demoKicker">
+        Interactive product concept
+      </div>
+
+      <h2 data-i18n="demoTitle">
+        From a customer signal<br>
+        <span>to a business decision.</span>
+      </h2>
+
+      <p class="lead" data-i18n="demoLead">
+        Explore a sample real-estate enquiry and watch how the conversation becomes structured business context.
+      </p>
+
+    </div>
+
+
+    <div class="workspaceShell reveal">
+
+      <div class="workspaceBar">
+
+        <div class="windowDots">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+        <div class="workspaceName">
+          LEGMAO / INTELLIGENCE WORKSPACE
+        </div>
+
+        <div class="liveTag">
+          <i></i>
+          LIVE DEMO
+        </div>
+
+      </div>
+
+
+      <div class="workspaceGrid">
+
+        <!-- Conversation -->
+
+        <div class="conversation">
+
+          <div class="panelLabel" data-i18n="conversationLabel">
+            AI Sales Assistant / Sample conversation
+          </div>
+
+          <div id="chatMessages" class="chatMessages"></div>
+
+          <div class="chatControls">
+
+            <button
+              class="demoBtn primary"
+              id="autoPlay"
+              type="button"
+              data-i18n="autoPlay"
+            >
+              Play demo
+            </button>
+
+            <button
+              class="demoBtn"
+              id="nextStep"
+              type="button"
+              data-i18n="nextStep"
+            >
+              Next step →
+            </button>
+
+            <button
+              class="demoBtn"
+              id="resetDemo"
+              type="button"
+              data-i18n="resetDemo"
+            >
+              Reset
+            </button>
+
+          </div>
+
+          <p class="demoHint" data-i18n="demoHint">
+            Illustrative product experience. Score and recommendation are example values, not a live customer evaluation.
+          </p>
+
+        </div>
+
+
+        <!-- Signal -->
+
+        <div class="signalPanel">
+
+          <div class="signalHeader">
+
+            <strong data-i18n="signalTitle">
+              Customer signal
+            </strong>
+
+            <span class="stage" id="stageLabel">
+              STAGE 01 / 04
+            </span>
+
+          </div>
+
+
+          <div class="signalCards">
+
+            <div class="signalCard">
+              <small data-i18n="intentLabel">INTENT</small>
+              <strong id="intentValue">Unknown</strong>
+            </div>
+
+            <div class="signalCard">
+              <small data-i18n="budgetLabel">BUDGET</small>
+              <strong id="budgetValue">Not specified</strong>
+            </div>
+
+            <div class="signalCard">
+              <small data-i18n="locationLabel">LOCATION</small>
+              <strong id="locationValue">Phnom Penh</strong>
+            </div>
+
+            <div class="signalCard">
+              <small data-i18n="timelineLabel">TIMELINE</small>
+              <strong id="timelineValue">Not specified</strong>
+            </div>
+
+          </div>
+
+
+          <div class="scoreBox">
+
+            <div class="scoreLabel" data-i18n="scoreLabel">
+              Example opportunity score
+            </div>
+
+            <div class="score">
+              <span id="scoreValue">22</span>
+              <small>/100</small>
+            </div>
+
+            <div
+              class="scoreState"
+              id="scoreState"
+            >
+              INITIAL SIGNAL
+            </div>
+
+            <div class="scoreBar">
+              <i id="scoreBar"></i>
+            </div>
+
+          </div>
+
+
+          <div class="nextAction">
+
+            <small data-i18n="nextActionLabel">
+              Next best action
+            </small>
+
+            <p id="nextActionText">
+              Ask whether the property is for personal use or investment.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     INDUSTRIES
+========================= -->
+
+<section class="section" id="industries">
+
+  <div class="wrap">
+
+    <div class="sectionHead reveal">
+
+      <div class="kicker" data-i18n="industryKicker">
+        Built for real businesses
+      </div>
+
+      <h2 data-i18n="industryTitle">
+        One intelligence layer.<br>
+        <span>Many business contexts.</span>
+      </h2>
+
+      <p class="lead" data-i18n="industryLead">
+        Start with a clear use case and expand the system as your business evolves.
+      </p>
+
+    </div>
+
+
+    <div class="industryGrid">
+
+      <a class="industry featured reveal" href="#real-estate">
+
+        <strong data-i18n="realEstate">
+          Real Estate
+        </strong>
+
+        <small>
+          01 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="automotive">
+          Automotive
+        </strong>
+
+        <small>
+          02 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="ecommerce">
+          E-commerce
+        </strong>
+
+        <small>
+          03 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="hospitality">
+          Hospitality
+        </strong>
+
+        <small>
+          04 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="restaurants">
+          Restaurants
+        </strong>
+
+        <small>
+          05 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="construction">
+          Construction
+        </strong>
+
+        <small>
+          06 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="trading">
+          Trading
+        </strong>
+
+        <small>
+          07 · VIEW →
+        </small>
+
+      </a>
+
+
+      <a class="industry reveal" href="#industries">
+
+        <strong data-i18n="manufacturing">
+          Manufacturing
+        </strong>
+
+        <small>
+          08 · VIEW →
+        </small>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     REAL ESTATE CASE STUDY
+========================= -->
+
+<section class="section caseStudy" id="real-estate">
+
+  <div class="wrap">
+
+    <div class="caseCard reveal">
+
+      <div class="caseCopy">
+
+        <div class="kicker" data-i18n="realEstateKicker">
+          First use case
+        </div>
+
+        <h3 data-i18n="realEstateTitle">
+          Real Estate<br>
+          Sales Intelligence
+        </h3>
+
+        <p data-i18n="realEstateCopy">
+          Turn property enquiries into structured opportunities. Understand intent, budget, location and timeline so sales teams can prioritize follow-up and respond with better context.
+        </p>
+
+        <a
+          href="mailto:legmao.ai@gmail.com"
+          class="caseLink"
+          data-i18n="caseLink"
+        >
+          EXPLORE THE USE CASE →
         </a>
-        <a href="#" class="btn btn-ghost">Talk to Sales</a>
+
       </div>
+
+
+      <div class="caseVisual">
+
+        <div class="propertySignal">
+
+          <div class="propertySignalTop">
+
+            <strong>
+              PROPERTY SIGNAL
+            </strong>
+
+            <span>
+              ● QUALIFIED
+            </span>
+
+          </div>
+
+
+          <div class="propertyRows">
+
+            <div class="propertyRow">
+              <small>INTENT</small>
+              <b>Investment</b>
+            </div>
+
+            <div class="propertyRow">
+              <small>BUDGET</small>
+              <b>$150K</b>
+            </div>
+
+            <div class="propertyRow">
+              <small>LOCATION</small>
+              <b>BKK1</b>
+            </div>
+
+            <div class="propertyRow">
+              <small>TIMELINE</small>
+              <b>1–3 months</b>
+            </div>
+
+            <div class="propertyRow">
+              <small>OPPORTUNITY</small>
+              <b>89 / 100</b>
+            </div>
+
+            <div class="propertyRow">
+              <small>NEXT ACTION</small>
+              <b>Sales follow-up</b>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- FOOTER -->
-<div class="container">
-  <footer>
-    <div class="footer-copy">© 2025 LEGMAO AI. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Security</a>
-      <a href="#">Status</a>
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="company">
+
+  <div class="wrap">
+
+    <div class="ctaInner reveal">
+
+      <div class="kicker" data-i18n="ctaKicker">
+        Start a conversation
+      </div>
+
+      <h2 data-i18n="ctaTitle">
+        Build what comes next.
+      </h2>
+
+      <p class="lead" data-i18n="ctaLead">
+        Tell us where your business is losing time, opportunities or momentum. We’ll explore where AI can help.
+      </p>
+
+      <a
+        class="textbtn"
+        href="mailto:legmao.ai@gmail.com"
+        data-i18n="ctaButton"
+      >
+        START A CONVERSATION <span>→</span>
+      </a>
+
     </div>
-  </footer>
-</div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+
+    <div>
+      LEGMAO AI — AI Growth Infrastructure
+    </div>
+
+    <div class="footerlinks">
+      <a href="#platform">Platform</a>
+      <a href="#intelligence">Intelligence</a>
+      <a href="#industries">Industries</a>
+      <span>© <span id="year">2026</span> LEGMAO AI</span>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* ============================================================
+   LANGUAGE SYSTEM
+============================================================ */
+
+const dictionary = {
+
+  en:{
+    navPlatform:"Platform",
+    navIntelligence:"Intelligence",
+    navIndustries:"Industries",
+    navCompany:"Company",
+    talk:"Talk to us",
+
+    eyebrow:"AI Growth Infrastructure",
+
+    heroTitle:"AI that moves business<span>forward.</span>",
+
+    heroLead:"Turn customer signals into revenue opportunities.",
+
+    heroSub:"AI-powered conversations, qualification and next-best actions — built for modern businesses.",
+
+    watch:"SEE AI IN ACTION <span>→</span>",
+
+    contactLink:"Talk about your business ↗",
+
+    heroFoot:"INTELLIGENCE · CONVERSATION · ACTION",
+
+    platformKicker:"The Intelligence Layer",
+
+    platformTitle:"Not another chatbot.<br><span>An intelligent growth layer.</span>",
+
+    platformLead:"LEGMAO AI connects customer signals, conversations and business workflows — so teams can understand faster, respond smarter and act sooner.",
+
+    flow1Title:"Customer signals",
+    flow1Copy:"Capture questions, preferences, urgency and buying intent.",
+
+    flow2Title:"AI understands",
+    flow2Copy:"Read the context behind conversations, not just keywords.",
+
+    flow3Title:"Qualify opportunities",
+    flow3Copy:"Structure intent, budget, location and timeline into useful context.",
+
+    flow4Title:"Recommend action",
+    flow4Copy:"Help teams decide what should happen next.",
+
+    capKicker:"What LEGMAO AI does",
+
+    capTitle:"Intelligence that makes work<br><span>move forward.</span>",
+
+    capLead:"Turn individual customer interactions into a connected business process.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"Understand what customers need, what matters to them and what they may need next.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"Engage customers naturally with context-aware conversations instead of rigid scripts.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"Structure intent, budget, location and timing so teams can prioritize the right opportunities.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"Recommend practical next steps such as prioritizing a lead, routing a conversation or preparing a follow-up.",
+
+    demoKicker:"Interactive product concept",
+
+    demoTitle:"From a customer signal<br><span>to a business decision.</span>",
+
+    demoLead:"Explore a sample real-estate enquiry and watch how the conversation becomes structured business context.",
+
+    conversationLabel:"AI Sales Assistant / Sample conversation",
+
+    autoPlay:"Play demo",
+    nextStep:"Next step →",
+    resetDemo:"Reset",
+
+    demoHint:"Illustrative product experience. Score and recommendation are example values, not a live customer evaluation.",
+
+    signalTitle:"Customer signal",
+
+    intentLabel:"INTENT",
+    budgetLabel:"BUDGET",
+    locationLabel:"LOCATION",
+    timelineLabel:"TIMELINE",
+
+    scoreLabel:"Example opportunity score",
+
+    nextActionLabel:"Next best action",
+
+    industryKicker:"Built for real businesses",
+
+    industryTitle:"One intelligence layer.<br><span>Many business contexts.</span>",
+
+    industryLead:"Start with a clear use case and expand the system as your business evolves.",
+
+    realEstate:"Real Estate",
+    automotive:"Automotive",
+    ecommerce:"E-commerce",
+    hospitality:"Hospitality",
+    restaurants:"Restaurants",
+    construction:"Construction",
+    trading:"Trading",
+    manufacturing:"Manufacturing",
+
+    realEstateKicker:"First use case",
+
+    realEstateTitle:"Real Estate<br>Sales Intelligence",
+
+    realEstateCopy:"Turn property enquiries into structured opportunities. Understand intent, budget, location and timeline so sales teams can prioritize follow-up and respond with better context.",
+
+    caseLink:"EXPLORE THE USE CASE →",
+
+    ctaKicker:"Start a conversation",
+
+    ctaTitle:"Build what comes next.",
+
+    ctaLead:"Tell us where your business is losing time, opportunities or momentum. We’ll explore where AI can help.",
+
+    ctaButton:"START A CONVERSATION <span>→</span>"
+  },
+
+
+  zh:{
+    navPlatform:"平台",
+    navIntelligence:"智能系统",
+    navIndustries:"行业",
+    navCompany:"公司",
+    talk:"联系我们",
+
+    eyebrow:"AI 增长基础设施",
+
+    heroTitle:"让 AI 推动业务<span>向前。</span>",
+
+    heroLead:"将客户信号转化为收入机会。",
+
+    heroSub:"以 AI 驱动客户对话、商机筛选与下一步行动，为现代企业打造。",
+
+    watch:"查看 AI 实时工作 <span>→</span>",
+
+    contactLink:"聊聊你的业务 ↗",
+
+    heroFoot:"智能 · 对话 · 行动",
+
+    platformKicker:"智能增长层",
+
+    platformTitle:"不只是聊天机器人。<br><span>而是一层智能增长基础设施。</span>",
+
+    platformLead:"LEGMAO AI 连接客户信号、对话与业务流程，让团队更快理解、更聪明地回应，并及时采取行动。",
+
+    flow1Title:"客户信号",
+    flow1Copy:"捕捉问题、偏好、紧迫程度与购买意向。",
+
+    flow2Title:"AI 理解",
+    flow2Copy:"理解对话背后的上下文，而不只是识别关键词。",
+
+    flow3Title:"识别商机",
+    flow3Copy:"将意向、预算、位置和时间转化为结构化信息。",
+
+    flow4Title:"推荐行动",
+    flow4Copy:"帮助团队判断下一步最应该做什么。",
+
+    capKicker:"LEGMAO AI 能做什么",
+
+    capTitle:"让业务真正<span>向前移动的智能。</span>",
+
+    capLead:"把每一次客户互动连接成完整的业务流程。",
+
+    cap1Title:"客户智能",
+    cap1Copy:"理解客户需要什么、重视什么，以及下一步可能需要什么。",
+
+    cap2Title:"AI 智能对话",
+    cap2Copy:"通过理解上下文的对话自然服务客户，而不是固定脚本。",
+
+    cap3Title:"商机智能",
+    cap3Copy:"结构化分析意向、预算、地点与时间，让团队优先处理真正重要的机会。",
+
+    cap4Title:"下一步行动",
+    cap4Copy:"推荐实际行动，例如优先处理线索、分配客户或准备跟进。",
+
+    demoKicker:"交互式产品体验",
+
+    demoTitle:"从一个客户信号<br><span>到一个业务决策。</span>",
+
+    demoLead:"体验一条房地产客户咨询，看 AI 如何把对话转化为结构化业务信息。",
+
+    conversationLabel:"AI 销售助手 / 示例对话",
+
+    autoPlay:"自动演示",
+    nextStep:"下一步 →",
+    resetDemo:"重置",
+
+    demoHint:"这是产品概念演示。评分和推荐为示例数据，并非真实客户评估。",
+
+    signalTitle:"客户信号",
+
+    intentLabel:"意向",
+    budgetLabel:"预算",
+    locationLabel:"位置",
+    timelineLabel:"时间",
+
+    scoreLabel:"示例商机评分",
+
+    nextActionLabel:"下一步行动",
+
+    industryKicker:"服务真实商业场景",
+
+    industryTitle:"一层智能。<br><span>适用于多种业务。</span>",
+
+    industryLead:"从清晰的业务场景开始，随着企业需求持续扩展。",
+
+    realEstate:"房地产",
+    automotive:"汽车",
+    ecommerce:"电子商务",
+    hospitality:"酒店与旅游",
+    restaurants:"餐饮",
+    construction:"建筑",
+    trading:"贸易",
+    manufacturing:"制造",
+
+    realEstateKicker:"首个重点场景",
+
+    realEstateTitle:"房地产<br>销售智能",
+
+    realEstateCopy:"将房地产咨询转化为结构化商机。理解客户意向、预算、区域和时间，让销售团队更准确地安排跟进。",
+
+    caseLink:"查看应用场景 →",
+
+    ctaKicker:"开始交流",
+
+    ctaTitle:"一起构建下一步。",
+
+    ctaLead:"告诉我们你的业务在哪里浪费时间、错失机会或失去增长动力，我们一起探索 AI 可以帮助的地方。",
+
+    ctaButton:"开始交流 <span>→</span>"
+  },
+
+
+  "zh-tw":{
+    navPlatform:"平台",
+    navIntelligence:"智慧系統",
+    navIndustries:"產業",
+    navCompany:"公司",
+    talk:"聯絡我們",
+
+    eyebrow:"AI 成長基礎設施",
+
+    heroTitle:"讓 AI 推動業務<span>向前。</span>",
+
+    heroLead:"將客戶訊號轉化為收入機會。",
+
+    heroSub:"以 AI 驅動客戶對話、商機篩選與下一步行動，為現代企業打造。",
+
+    watch:"查看 AI 即時工作 <span>→</span>",
+
+    contactLink:"聊聊你的業務 ↗",
+
+    heroFoot:"智慧 · 對話 · 行動",
+
+    platformKicker:"智慧成長層",
+
+    platformTitle:"不只是聊天機器人。<br><span>而是一層智慧成長基礎設施。</span>",
+
+    platformLead:"LEGMAO AI 連結客戶訊號、對話與業務流程，讓團隊更快理解、更聰明地回應，並及時採取行動。",
+
+    flow1Title:"客戶訊號",
+    flow1Copy:"捕捉問題、偏好、緊迫程度與購買意向。",
+
+    flow2Title:"AI 理解",
+    flow2Copy:"理解對話背後的上下文，而不只是辨識關鍵字。",
+
+    flow3Title:"識別商機",
+    flow3Copy:"將意向、預算、位置和時間轉化為結構化資訊。",
+
+    flow4Title:"推薦行動",
+    flow4Copy:"協助團隊判斷下一步最應該做什麼。",
+
+    capKicker:"LEGMAO AI 能做什麼",
+
+    capTitle:"讓業務真正<span>向前移動的智慧。</span>",
+
+    capLead:"把每一次客戶互動連接成完整的業務流程。",
+
+    cap1Title:"客戶智慧",
+    cap1Copy:"理解客戶需要什麼、重視什麼，以及下一步可能需要什麼。",
+
+    cap2Title:"AI 智慧對話",
+    cap2Copy:"透過理解上下文的對話自然服務客戶，而不是固定腳本。",
+
+    cap3Title:"商機智慧",
+    cap3Copy:"結構化分析意向、預算、地點與時間，讓團隊優先處理真正重要的機會。",
+
+    cap4Title:"下一步行動",
+    cap4Copy:"推薦實際行動，例如優先處理線索、分配客戶或準備跟進。",
+
+    demoKicker:"互動式產品體驗",
+
+    demoTitle:"從一個客戶訊號<br><span>到一個業務決策。</span>",
+
+    demoLead:"體驗一條房地產客戶諮詢，看 AI 如何把對話轉化為結構化業務資訊。",
+
+    conversationLabel:"AI 銷售助手 / 示例對話",
+
+    autoPlay:"自動演示",
+    nextStep:"下一步 →",
+    resetDemo:"重置",
+
+    demoHint:"這是產品概念演示。評分和推薦為示例資料，並非真實客戶評估。",
+
+    signalTitle:"客戶訊號",
+
+    intentLabel:"意向",
+    budgetLabel:"預算",
+    locationLabel:"位置",
+    timelineLabel:"時間",
+
+    scoreLabel:"示例商機評分",
+
+    nextActionLabel:"下一步行動",
+
+    industryKicker:"服務真實商業場景",
+
+    industryTitle:"一層智慧。<br><span>適用於多種業務。</span>",
+
+    industryLead:"從清晰的業務場景開始，隨著企業需求持續擴展。",
+
+    realEstate:"房地產",
+    automotive:"汽車",
+    ecommerce:"電子商務",
+    hospitality:"酒店與旅遊",
+    restaurants:"餐飲",
+    construction:"建築",
+    trading:"貿易",
+    manufacturing:"製造",
+
+    realEstateKicker:"首個重點場景",
+
+    realEstateTitle:"房地產<br>銷售智慧",
+
+    realEstateCopy:"將房地產諮詢轉化為結構化商機。理解客戶意向、預算、區域和時間，讓銷售團隊更準確地安排跟進。",
+
+    caseLink:"查看應用場景 →",
+
+    ctaKicker:"開始交流",
+
+    ctaTitle:"一起打造下一步。",
+
+    ctaLead:"告訴我們你的業務在哪裡浪費時間、錯失機會或失去成長動力，我們一起探索 AI 可以幫助的地方。",
+
+    ctaButton:"開始交流 <span>→</span>"
+  },
+
+
+  km:{
+    navPlatform:"វេទិកា",
+    navIntelligence:"ប្រព័ន្ធឆ្លាតវៃ",
+    navIndustries:"ឧស្សាហកម្ម",
+    navCompany:"ក្រុមហ៊ុន",
+    talk:"ទាក់ទងយើង",
+
+    eyebrow:"ហេដ្ឋារចនាសម្ព័ន្ធ AI សម្រាប់កំណើន",
+
+    heroTitle:"AI ដែលជំរុញអាជីវកម្ម<span>ទៅមុខ។</span>",
+
+    heroLead:"បម្លែងសញ្ញាពីអតិថិជនទៅជាឱកាសចំណូល។",
+
+    heroSub:"ការសន្ទនាដែលដំណើរការដោយ AI ការវាយតម្លៃឱកាស និងសកម្មភាពបន្ទាប់ សម្រាប់អាជីវកម្មទំនើប។",
+
+    watch:"មើល AI កំពុងដំណើរការ <span>→</span>",
+
+    contactLink:"និយាយអំពីអាជីវកម្មរបស់អ្នក ↗",
+
+    heroFoot:"ភាពឆ្លាតវៃ · ការសន្ទនា · សកម្មភាព",
+
+    platformKicker:"ស្រទាប់ឆ្លាតវៃ",
+
+    platformTitle:"មិនមែនត្រឹមជា Chatbot។<br><span>ជាស្រទាប់កំណើនឆ្លាតវៃ។</span>",
+
+    platformLead:"LEGMAO AI ភ្ជាប់សញ្ញាអតិថិជន ការសន្ទនា និងលំហូរការងារអាជីវកម្ម ដើម្បីឲ្យក្រុមការងារយល់បានលឿន ឆ្លើយតបបានប្រសើរ និងធ្វើសកម្មភាពបានទាន់ពេល។",
+
+    flow1Title:"សញ្ញាអតិថិជន",
+    flow1Copy:"ប្រមូលសំណួរ ចំណង់ចំណូលចិត្ត ភាពបន្ទាន់ និងចេតនាទិញ។",
+
+    flow2Title:"AI យល់",
+    flow2Copy:"យល់ពីបរិបទនៅពីក្រោយការសន្ទនា មិនមែនត្រឹមតែពាក្យគន្លឹះ។",
+
+    flow3Title:"កំណត់ឱកាស",
+    flow3Copy:"រៀបចំចេតនា ថវិកា ទីតាំង និងពេលវេលា។",
+
+    flow4Title:"ណែនាំសកម្មភាព",
+    flow4Copy:"ជួយក្រុមការងារសម្រេចថាតើអ្វីគួរធ្វើបន្ទាប់។",
+
+    capKicker:"អ្វីដែល LEGMAO AI ធ្វើ",
+
+    capTitle:"ភាពឆ្លាតវៃដែលជួយឲ្យការងារ<span>ទៅមុខ។</span>",
+
+    capLead:"បម្លែងអន្តរកម្មជាមួយអតិថិជននីមួយៗទៅជាលំហូរអាជីវកម្មដែលភ្ជាប់គ្នា។",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"យល់ពីអ្វីដែលអតិថិជនត្រូវការ និងអ្វីដែលពួកគេអាចត្រូវការបន្ទាប់។",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"សន្ទនាដោយយល់បរិបទ ជំនួសឲ្យស្គ្រីបដែលរឹងមាំ។",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"រៀបចំចេតនា ថវិកា ទីតាំង និងពេលវេលា ដើម្បីជ្រើសរើសឱកាសសំខាន់ៗ។",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"ណែនាំសកម្មភាពបន្ទាប់ដែលអាចអនុវត្តបាន។",
+
+    demoKicker:"បទពិសោធន៍ផលិតផលអន្តរកម្ម",
+
+    demoTitle:"ពីសញ្ញារបស់អតិថិជន<br><span>ទៅការសម្រេចចិត្តអាជីវកម្ម។</span>",
+
+    demoLead:"សាកល្បងសំណួរអចលនទ្រព្យ និងមើលពីរបៀបដែល AI រៀបចំវាទៅជាព័ត៌មានអាជីវកម្ម។",
+
+    conversationLabel:"AI Sales Assistant / សន្ទនាគំរូ",
+
+    autoPlay:"បង្ហាញដោយស្វ័យប្រវត្តិ",
+    nextStep:"ជំហានបន្ទាប់ →",
+    resetDemo:"កំណត់ឡើងវិញ",
+
+    demoHint:"នេះគឺជាការបង្ហាញផលិតផលជាគំរូ។ ពិន្ទុ និងការណែនាំគឺជាទិន្នន័យសម្រាប់បង្ហាញប៉ុណ្ណោះ។",
+
+    signalTitle:"សញ្ញាអតិថិជន",
+
+    intentLabel:"ចេតនា",
+    budgetLabel:"ថវិកា",
+    locationLabel:"ទីតាំង",
+    timelineLabel:"ពេលវេលា",
+
+    scoreLabel:"ពិន្ទុឱកាសគំរូ",
+
+    nextActionLabel:"សកម្មភាពបន្ទាប់",
+
+    industryKicker:"សម្រាប់អាជីវកម្មពិត",
+
+    industryTitle:"ស្រទាប់ឆ្លាតវៃមួយ។<br><span>សម្រាប់បរិបទអាជីវកម្មជាច្រើន។</span>",
+
+    industryLead:"ចាប់ផ្តើមពីករណីប្រើប្រាស់ច្បាស់លាស់ ហើយពង្រីកតាមតម្រូវការអាជីវកម្ម។",
+
+    realEstate:"អចលនទ្រព្យ",
+    automotive:"រថយន្ត",
+    ecommerce:"E-commerce",
+    hospitality:"សណ្ឋាគារ",
+    restaurants:"ភោជនីយដ្ឋាន",
+    construction:"សំណង់",
+    trading:"ពាណិជ្ជកម្ម",
+    manufacturing:"ផលិតកម្ម",
+
+    realEstateKicker:"ករណីប្រើប្រាស់ដំបូង",
+
+    realEstateTitle:"អចលនទ្រព្យ<br>Sales Intelligence",
+
+    realEstateCopy:"បម្លែងសំណួរអចលនទ្រព្យទៅជាឱកាសដែលមានរចនាសម្ព័ន្ធ។ យល់ពីចេតនា ថវិកា ទីតាំង និងពេលវេលា ដើម្បីឲ្យក្រុមលក់អាចផ្តល់ការតាមដានបានល្អជាងមុន។",
+
+    caseLink:"មើលករណីប្រើប្រាស់ →",
+
+    ctaKicker:"ចាប់ផ្តើមការសន្ទនា",
+
+    ctaTitle:"បង្កើតអ្វីដែលមកបន្ទាប់។",
+
+    ctaLead:"ប្រាប់យើងថាអាជីវកម្មរបស់អ្នកកំពុងខាតពេល ខាតឱកាស ឬបាត់បង់សន្ទុះនៅកន្លែងណា។",
+
+    ctaButton:"ចាប់ផ្តើមការសន្ទនា <span>→</span>"
+  },
+
+
+  ja:{
+    navPlatform:"Platform",
+    navIntelligence:"Intelligence",
+    navIndustries:"Industries",
+    navCompany:"Company",
+    talk:"お問い合わせ",
+
+    eyebrow:"AI グロース・インフラ",
+
+    heroTitle:"AIで、ビジネスを<span>前へ。</span>",
+
+    heroLead:"顧客シグナルを収益機会へ変える。",
+
+    heroSub:"顧客との会話、商談の評価、次のアクションをAIで支援します。",
+
+    watch:"AIの動きを見る <span>→</span>",
+
+    contactLink:"ビジネスについて話す ↗",
+
+    heroFoot:"インテリジェンス · 会話 · アクション",
+
+    platformKicker:"インテリジェンス・レイヤー",
+
+    platformTitle:"ただのチャットボットではない。<br><span>インテリジェントな成長レイヤー。</span>",
+
+    platformLead:"LEGMAO AIは顧客シグナル、会話、業務フローをつなぎ、より速く理解し、より賢く対応し、適切に行動できるようにします。",
+
+    flow1Title:"顧客シグナル",
+    flow1Copy:"質問、好み、緊急度、購買意向を取得します。",
+
+    flow2Title:"AIが理解",
+    flow2Copy:"キーワードだけでなく、会話の背景を理解します。",
+
+    flow3Title:"機会を評価",
+    flow3Copy:"意向、予算、場所、時期を構造化します。",
+
+    flow4Title:"アクションを提案",
+    flow4Copy:"次に何をすべきかをチームに示します。",
+
+    capKicker:"LEGMAO AIの機能",
+
+    capTitle:"仕事を<span>前へ進めるインテリジェンス。</span>",
+
+    capLead:"一つひとつの顧客接点を、つながったビジネスプロセスへ。",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"顧客が何を必要とし、何を重視しているかを理解します。",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"固定スクリプトではなく、文脈を理解した自然な会話を実現します。",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"意向、予算、場所、タイミングを整理し、重要な機会を優先します。",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"リードの優先順位付けやフォローアップなど、次の行動を提案します。",
+
+    demoKicker:"インタラクティブ製品コンセプト",
+
+    demoTitle:"顧客シグナルから<br><span>ビジネス意思決定へ。</span>",
+
+    demoLead:"不動産の問い合わせ例を通して、会話がどのように構造化されるかをご覧ください。",
+
+    conversationLabel:"AI Sales Assistant / サンプル会話",
+
+    autoPlay:"デモ再生",
+    nextStep:"次のステップ →",
+    resetDemo:"リセット",
+
+    demoHint:"製品体験の例です。スコアと提案はサンプル値であり、実際の顧客評価ではありません。",
+
+    signalTitle:"Customer signal",
+
+    intentLabel:"意向",
+    budgetLabel:"予算",
+    locationLabel:"場所",
+    timelineLabel:"時期",
+
+    scoreLabel:"サンプル機会スコア",
+
+    nextActionLabel:"Next best action",
+
+    industryKicker:"実際のビジネスのために",
+
+    industryTitle:"ひとつのインテリジェンス・レイヤー。<br><span>多様なビジネスへ。</span>",
+
+    industryLead:"明確なユースケースから始め、ビジネスの成長に合わせて拡張します。",
+
+    realEstate:"不動産",
+    automotive:"自動車",
+    ecommerce:"E-commerce",
+    hospitality:"ホスピタリティ",
+    restaurants:"レストラン",
+    construction:"建設",
+    trading:"トレーディング",
+    manufacturing:"製造",
+
+    realEstateKicker:"最初のユースケース",
+
+    realEstateTitle:"不動産<br>セールス・インテリジェンス",
+
+    realEstateCopy:"不動産への問い合わせを構造化された商談機会へ。意向、予算、場所、時期を理解し、営業チームのフォローアップを支援します。",
+
+    caseLink:"ユースケースを見る →",
+
+    ctaKicker:"会話を始める",
+
+    ctaTitle:"次のビジネスをつくる。",
+
+    ctaLead:"時間、機会、成長を失っている場所を教えてください。AIが支援できる領域を一緒に探します。",
+
+    ctaButton:"会話を始める <span>→</span>"
+  },
+
+
+  ko:{
+    navPlatform:"플랫폼",
+    navIntelligence:"인텔리전스",
+    navIndustries:"산업",
+    navCompany:"회사",
+    talk:"문의하기",
+
+    eyebrow:"AI 성장 인프라",
+
+    heroTitle:"AI로 비즈니스를<span>앞으로.</span>",
+
+    heroLead:"고객 신호를 수익 기회로 전환합니다.",
+
+    heroSub:"AI 기반 대화, 기회 평가와 다음 행동을 현대적인 비즈니스를 위해 제공합니다.",
+
+    watch:"AI 작동 보기 <span>→</span>",
+
+    contactLink:"비즈니스 이야기하기 ↗",
+
+    heroFoot:"인텔리전스 · 대화 · 액션",
+
+    platformKicker:"인텔리전스 레이어",
+
+    platformTitle:"단순한 챗봇이 아닙니다.<br><span>지능형 성장 레이어입니다.</span>",
+
+    platformLead:"LEGMAO AI는 고객 신호, 대화와 업무 흐름을 연결하여 더 빠르게 이해하고 더 스마트하게 대응하도록 돕습니다.",
+
+    flow1Title:"고객 신호",
+    flow1Copy:"질문, 선호도, 긴급성과 구매 의도를 포착합니다.",
+
+    flow2Title:"AI 이해",
+    flow2Copy:"키워드가 아니라 대화의 맥락을 이해합니다.",
+
+    flow3Title:"기회 평가",
+    flow3Copy:"의도, 예산, 위치와 일정을 구조화합니다.",
+
+    flow4Title:"행동 추천",
+    flow4Copy:"다음에 무엇을 해야 할지 제안합니다.",
+
+    capKicker:"LEGMAO AI가 하는 일",
+
+    capTitle:"업무를<span>앞으로 움직이는 인텔리전스.</span>",
+
+    capLead:"개별 고객 상호작용을 연결된 비즈니스 프로세스로 전환합니다.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"고객이 무엇을 원하고 중요하게 생각하는지 이해합니다.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"고정된 스크립트가 아니라 맥락을 이해하는 자연스러운 대화를 제공합니다.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"의도, 예산, 위치와 시점을 구조화하여 중요한 기회를 우선합니다.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"리드 우선순위 지정, 라우팅과 후속 조치 등 다음 행동을 추천합니다.",
+
+    demoKicker:"인터랙티브 제품 컨셉",
+
+    demoTitle:"고객 신호에서<br><span>비즈니스 의사결정까지.</span>",
+
+    demoLead:"부동산 문의 사례를 통해 대화가 어떻게 구조화된 비즈니스 정보가 되는지 확인해보세요.",
+
+    conversationLabel:"AI Sales Assistant / 샘플 대화",
+
+    autoPlay:"데모 재생",
+    nextStep:"다음 단계 →",
+    resetDemo:"초기화",
+
+    demoHint:"제품 경험 예시입니다. 점수와 추천은 샘플 값이며 실제 고객 평가가 아닙니다.",
+
+    signalTitle:"고객 신호",
+
+    intentLabel:"의도",
+    budgetLabel:"예산",
+    locationLabel:"위치",
+    timelineLabel:"일정",
+
+    scoreLabel:"샘플 기회 점수",
+
+    nextActionLabel:"다음 행동",
+
+    industryKicker:"실제 비즈니스를 위해",
+
+    industryTitle:"하나의 인텔리전스 레이어.<br><span>다양한 비즈니스.</span>",
+
+    industryLead:"명확한 사용 사례에서 시작하여 비즈니스와 함께 확장합니다.",
+
+    realEstate:"부동산",
+    automotive:"자동차",
+    ecommerce:"E-commerce",
+    hospitality:"호스피탈리티",
+    restaurants:"레스토랑",
+    construction:"건설",
+    trading:"트레이딩",
+    manufacturing:"제조",
+
+    realEstateKicker:"첫 번째 사용 사례",
+
+    realEstateTitle:"부동산<br>Sales Intelligence",
+
+    realEstateCopy:"부동산 문의를 구조화된 기회로 전환합니다. 의도, 예산, 지역과 일정을 이해하여 영업팀이 더 나은 후속 조치를 할 수 있도록 지원합니다.",
+
+    caseLink:"사용 사례 보기 →",
+
+    ctaKicker:"대화 시작",
+
+    ctaTitle:"다음 단계를 만드세요.",
+
+    ctaLead:"비즈니스에서 시간, 기회 또는 성장 동력을 잃고 있는 곳을 알려주세요. AI가 도울 수 있는 영역을 함께 찾아보겠습니다.",
+
+    ctaButton:"대화 시작 <span>→</span>"
+  },
+
+
+  th:{
+    navPlatform:"แพลตฟอร์ม",
+    navIntelligence:"อินเทลลิเจนซ์",
+    navIndustries:"อุตสาหกรรม",
+    navCompany:"บริษัท",
+    talk:"ติดต่อเรา",
+
+    eyebrow:"โครงสร้างพื้นฐาน AI เพื่อการเติบโต",
+
+    heroTitle:"AI ที่ขับเคลื่อนธุรกิจ<span>ไปข้างหน้า</span>",
+
+    heroLead:"เปลี่ยนสัญญาณจากลูกค้าให้เป็นโอกาสทางรายได้",
+
+    heroSub:"บทสนทนา การคัดกรองโอกาส และการดำเนินการถัดไปด้วย AI สำหรับธุรกิจยุคใหม่",
+
+    watch:"ดู AI ทำงาน <span>→</span>",
+
+    contactLink:"พูดคุยเกี่ยวกับธุรกิจ ↗",
+
+    heroFoot:"อินเทลลิเจนซ์ · บทสนทนา · แอ็กชัน",
+
+    platformKicker:"ชั้นอินเทลลิเจนซ์",
+
+    platformTitle:"ไม่ใช่แค่แชตบอต<br><span>แต่คือเลเยอร์การเติบโตอัจฉริยะ</span>",
+
+    platformLead:"LEGMAO AI เชื่อมสัญญาณลูกค้า บทสนทนา และเวิร์กโฟลว์ธุรกิจ เพื่อให้ทีมเข้าใจเร็วขึ้น ตอบได้ฉลาดขึ้น และลงมือได้ตรงจังหวะ",
+
+    flow1Title:"สัญญาณลูกค้า",
+    flow1Copy:"เก็บคำถาม ความต้องการ ความเร่งด่วน และความตั้งใจซื้อ",
+
+    flow2Title:"AI เข้าใจ",
+    flow2Copy:"เข้าใจบริบทของบทสนทนา ไม่ใช่แค่คีย์เวิร์ด",
+
+    flow3Title:"คัดกรองโอกาส",
+    flow3Copy:"จัดโครงสร้างความตั้งใจ งบประมาณ สถานที่ และช่วงเวลา",
+
+    flow4Title:"แนะนำการดำเนินการ",
+    flow4Copy:"ช่วยทีมตัดสินใจว่าควรทำอะไรต่อ",
+
+    capKicker:"สิ่งที่ LEGMAO AI ทำ",
+
+    capTitle:"อินเทลลิเจนซ์ที่ช่วยให้ธุรกิจ<span>เดินหน้า</span>",
+
+    capLead:"เปลี่ยนทุกปฏิสัมพันธ์กับลูกค้าให้เป็นกระบวนการธุรกิจที่เชื่อมต่อกัน",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"เข้าใจสิ่งที่ลูกค้าต้องการ สิ่งที่สำคัญ และสิ่งที่อาจต้องการต่อไป",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"สนทนาอย่างเป็นธรรมชาติด้วยบริบท แทนสคริปต์แบบตายตัว",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"จัดโครงสร้างความตั้งใจ งบประมาณ สถานที่ และเวลาเพื่อจัดลำดับโอกาส",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"แนะนำขั้นตอนถัดไปที่ใช้งานได้จริง",
+
+    demoKicker:"แนวคิดผลิตภัณฑ์แบบโต้ตอบ",
+
+    demoTitle:"จากสัญญาณลูกค้า<br><span>สู่การตัดสินใจทางธุรกิจ</span>",
+
+    demoLead:"ทดลองดูเคสคำถามด้านอสังหาริมทรัพย์และดูว่า AI เปลี่ยนบทสนทนาเป็นข้อมูลธุรกิจอย่างไร",
+
+    conversationLabel:"AI Sales Assistant / บทสนทนาตัวอย่าง",
+
+    autoPlay:"เล่นเดโม",
+    nextStep:"ขั้นตอนถัดไป →",
+    resetDemo:"รีเซ็ต",
+
+    demoHint:"ประสบการณ์ผลิตภัณฑ์เชิงตัวอย่าง คะแนนและคำแนะนำเป็นข้อมูลตัวอย่าง ไม่ใช่การประเมินลูกค้าจริง",
+
+    signalTitle:"สัญญาณลูกค้า",
+
+    intentLabel:"ความตั้งใจ",
+    budgetLabel:"งบประมาณ",
+    locationLabel:"สถานที่",
+    timelineLabel:"ช่วงเวลา",
+
+    scoreLabel:"คะแนนโอกาสตัวอย่าง",
+
+    nextActionLabel:"การดำเนินการถัดไป",
+
+    industryKicker:"สร้างเพื่อธุรกิจจริง",
+
+    industryTitle:"อินเทลลิเจนซ์หนึ่งเลเยอร์<br><span>สำหรับหลายธุรกิจ</span>",
+
+    industryLead:"เริ่มจาก use case ที่ชัดเจนและขยายตามธุรกิจของคุณ",
+
+    realEstate:"อสังหาริมทรัพย์",
+    automotive:"ยานยนต์",
+    ecommerce:"E-commerce",
+    hospitality:"โรงแรมและการบริการ",
+    restaurants:"ร้านอาหาร",
+    construction:"ก่อสร้าง",
+    trading:"การค้า",
+    manufacturing:"การผลิต",
+
+    realEstateKicker:"Use case แรก",
+
+    realEstateTitle:"อสังหาริมทรัพย์<br>Sales Intelligence",
+
+    realEstateCopy:"เปลี่ยนคำถามเกี่ยวกับอสังหาริมทรัพย์ให้เป็นโอกาสที่มีโครงสร้าง เข้าใจความตั้งใจ งบประมาณ พื้นที่ และช่วงเวลา เพื่อช่วยทีมขายติดตามได้แม่นยำขึ้น",
+
+    caseLink:"ดู Use Case →",
+
+    ctaKicker:"เริ่มการสนทนา",
+
+    ctaTitle:"สร้างสิ่งที่จะเกิดขึ้นต่อไป",
+
+    ctaLead:"บอกเราว่าธุรกิจของคุณเสียเวลา โอกาส หรือแรงส่งตรงไหน แล้วเราจะช่วยสำรวจว่า AI สามารถเข้ามาช่วยได้อย่างไร",
+
+    ctaButton:"เริ่มการสนทนา <span>→</span>"
+  },
+
+
+  vi:{
+    navPlatform:"Nền tảng",
+    navIntelligence:"Trí tuệ",
+    navIndustries:"Ngành",
+    navCompany:"Công ty",
+    talk:"Liên hệ",
+
+    eyebrow:"Hạ tầng AI cho tăng trưởng",
+
+    heroTitle:"AI đưa doanh nghiệp<span>tiến về phía trước.</span>",
+
+    heroLead:"Biến tín hiệu khách hàng thành cơ hội doanh thu.",
+
+    heroSub:"Hội thoại, đánh giá cơ hội và hành động tiếp theo được hỗ trợ bởi AI dành cho doanh nghiệp hiện đại.",
+
+    watch:"XEM AI HOẠT ĐỘNG <span>→</span>",
+
+    contactLink:"Trao đổi về doanh nghiệp ↗",
+
+    heroFoot:"TRÍ TUỆ · HỘI THOẠI · HÀNH ĐỘNG",
+
+    platformKicker:"Lớp trí tuệ",
+
+    platformTitle:"Không chỉ là chatbot.<br><span>Một lớp tăng trưởng thông minh.</span>",
+
+    platformLead:"LEGMAO AI kết nối tín hiệu khách hàng, hội thoại và quy trình kinh doanh để đội ngũ hiểu nhanh hơn, phản hồi thông minh hơn và hành động đúng lúc.",
+
+    flow1Title:"Tín hiệu khách hàng",
+    flow1Copy:"Thu thập câu hỏi, sở thích, mức độ cấp thiết và ý định mua.",
+
+    flow2Title:"AI hiểu",
+    flow2Copy:"Hiểu bối cảnh phía sau cuộc trò chuyện, không chỉ từ khóa.",
+
+    flow3Title:"Đánh giá cơ hội",
+    flow3Copy:"Cấu trúc ý định, ngân sách, vị trí và thời gian.",
+
+    flow4Title:"Đề xuất hành động",
+    flow4Copy:"Giúp đội ngũ biết bước tiếp theo nên là gì.",
+
+    capKicker:"LEGMAO AI làm gì",
+
+    capTitle:"Trí tuệ giúp công việc<span>tiến về phía trước.</span>",
+
+    capLead:"Biến từng tương tác khách hàng thành một quy trình kinh doanh kết nối.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"Hiểu khách hàng cần gì, coi trọng điều gì và có thể cần gì tiếp theo.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"Tương tác tự nhiên với ngữ cảnh thay vì các kịch bản cố định.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"Cấu trúc ý định, ngân sách, vị trí và thời gian để ưu tiên cơ hội phù hợp.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"Đề xuất các bước tiếp theo có thể thực hiện ngay.",
+
+    demoKicker:"Trải nghiệm sản phẩm tương tác",
+
+    demoTitle:"Từ tín hiệu khách hàng<br><span>đến quyết định kinh doanh.</span>",
+
+    demoLead:"Khám phá một yêu cầu bất động sản mẫu và xem AI biến cuộc trò chuyện thành thông tin kinh doanh như thế nào.",
+
+    conversationLabel:"AI Sales Assistant / Hội thoại mẫu",
+
+    autoPlay:"Chạy demo",
+    nextStep:"Bước tiếp theo →",
+    resetDemo:"Đặt lại",
+
+    demoHint:"Đây là trải nghiệm sản phẩm minh họa. Điểm số và đề xuất chỉ là dữ liệu mẫu.",
+
+    signalTitle:"Tín hiệu khách hàng",
+
+    intentLabel:"Ý ĐỊNH",
+    budgetLabel:"NGÂN SÁCH",
+    locationLabel:"VỊ TRÍ",
+    timelineLabel:"THỜI GIAN",
+
+    scoreLabel:"Điểm cơ hội mẫu",
+
+    nextActionLabel:"Hành động tiếp theo",
+
+    industryKicker:"Dành cho doanh nghiệp thực tế",
+
+    industryTitle:"Một lớp trí tuệ.<br><span>Nhiều bối cảnh kinh doanh.</span>",
+
+    industryLead:"Bắt đầu từ một use case rõ ràng và mở rộng khi doanh nghiệp phát triển.",
+
+    realEstate:"Bất động sản",
+    automotive:"Ô tô",
+    ecommerce:"E-commerce",
+    hospitality:"Khách sạn",
+    restaurants:"Nhà hàng",
+    construction:"Xây dựng",
+    trading:"Thương mại",
+    manufacturing:"Sản xuất",
+
+    realEstateKicker:"Use case đầu tiên",
+
+    realEstateTitle:"Bất động sản<br>Sales Intelligence",
+
+    realEstateCopy:"Biến yêu cầu bất động sản thành cơ hội có cấu trúc. Hiểu ý định, ngân sách, khu vực và thời gian để đội ngũ bán hàng ưu tiên follow-up tốt hơn.",
+
+    caseLink:"XEM USE CASE →",
+
+    ctaKicker:"Bắt đầu trao đổi",
+
+    ctaTitle:"Xây dựng điều tiếp theo.",
+
+    ctaLead:"Hãy cho chúng tôi biết doanh nghiệp đang mất thời gian, cơ hội hoặc động lực tăng trưởng ở đâu.",
+
+    ctaButton:"BẮT ĐẦU TRAO ĐỔI <span>→</span>"
+  },
+
+
+  id:{
+    navPlatform:"Platform",
+    navIntelligence:"Intelligence",
+    navIndustries:"Industri",
+    navCompany:"Perusahaan",
+    talk:"Hubungi kami",
+
+    eyebrow:"Infrastruktur AI untuk pertumbuhan",
+
+    heroTitle:"AI yang mendorong bisnis<span>ke depan.</span>",
+
+    heroLead:"Ubah sinyal pelanggan menjadi peluang pendapatan.",
+
+    heroSub:"Percakapan, kualifikasi peluang dan tindakan berikutnya yang didukung AI untuk bisnis modern.",
+
+    watch:"LIHAT AI BEKERJA <span>→</span>",
+
+    contactLink:"Bicarakan bisnis Anda ↗",
+
+    heroFoot:"INTELLIGENCE · CONVERSATION · ACTION",
+
+    platformKicker:"Lapisan Intelligence",
+
+    platformTitle:"Bukan sekadar chatbot.<br><span>Lapisan pertumbuhan cerdas.</span>",
+
+    platformLead:"LEGMAO AI menghubungkan sinyal pelanggan, percakapan dan workflow bisnis agar tim dapat memahami lebih cepat, merespons lebih cerdas dan bertindak tepat waktu.",
+
+    flow1Title:"Sinyal pelanggan",
+    flow1Copy:"Tangkap pertanyaan, preferensi, urgensi dan niat membeli.",
+
+    flow2Title:"AI memahami",
+    flow2Copy:"Memahami konteks percakapan, bukan hanya kata kunci.",
+
+    flow3Title:"Kualifikasi peluang",
+    flow3Copy:"Strukturkan niat, anggaran, lokasi dan waktu.",
+
+    flow4Title:"Rekomendasi tindakan",
+    flow4Copy:"Bantu tim menentukan langkah berikutnya.",
+
+    capKicker:"Apa yang dilakukan LEGMAO AI",
+
+    capTitle:"Intelligence yang membuat pekerjaan<span>bergerak maju.</span>",
+
+    capLead:"Ubah setiap interaksi pelanggan menjadi proses bisnis yang terhubung.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"Pahami apa yang dibutuhkan pelanggan dan apa yang mungkin mereka butuhkan berikutnya.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"Percakapan alami dengan konteks, bukan skrip yang kaku.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"Strukturkan niat, anggaran, lokasi dan waktu untuk memprioritaskan peluang.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"Rekomendasikan langkah berikutnya yang dapat langsung dilakukan.",
+
+    demoKicker:"Konsep produk interaktif",
+
+    demoTitle:"Dari sinyal pelanggan<br><span>menjadi keputusan bisnis.</span>",
+
+    demoLead:"Lihat contoh permintaan properti dan bagaimana AI mengubah percakapan menjadi konteks bisnis.",
+
+    conversationLabel:"AI Sales Assistant / Percakapan contoh",
+
+    autoPlay:"Putar demo",
+    nextStep:"Langkah berikutnya →",
+    resetDemo:"Reset",
+
+    demoHint:"Pengalaman produk ilustratif. Skor dan rekomendasi adalah nilai contoh.",
+
+    signalTitle:"Sinyal pelanggan",
+
+    intentLabel:"NIAT",
+    budgetLabel:"ANGGARAN",
+    locationLabel:"LOKASI",
+    timelineLabel:"WAKTU",
+
+    scoreLabel:"Skor peluang contoh",
+
+    nextActionLabel:"Tindakan berikutnya",
+
+    industryKicker:"Dibangun untuk bisnis nyata",
+
+    industryTitle:"Satu lapisan intelligence.<br><span>Banyak konteks bisnis.</span>",
+
+    industryLead:"Mulai dari use case yang jelas dan kembangkan seiring pertumbuhan bisnis.",
+
+    realEstate:"Properti",
+    automotive:"Otomotif",
+    ecommerce:"E-commerce",
+    hospitality:"Hospitality",
+    restaurants:"Restoran",
+    construction:"Konstruksi",
+    trading:"Perdagangan",
+    manufacturing:"Manufaktur",
+
+    realEstateKicker:"Use case pertama",
+
+    realEstateTitle:"Properti<br>Sales Intelligence",
+
+    realEstateCopy:"Ubah pertanyaan properti menjadi peluang terstruktur. Pahami niat, anggaran, lokasi dan waktu agar tim penjualan dapat melakukan follow-up dengan lebih baik.",
+
+    caseLink:"LIHAT USE CASE →",
+
+    ctaKicker:"Mulai percakapan",
+
+    ctaTitle:"Bangun langkah berikutnya.",
+
+    ctaLead:"Beri tahu kami di mana bisnis Anda kehilangan waktu, peluang atau momentum.",
+
+    ctaButton:"MULAI PERCAKAPAN <span>→</span>"
+  },
+
+
+  fr:{
+    navPlatform:"Plateforme",
+    navIntelligence:"Intelligence",
+    navIndustries:"Secteurs",
+    navCompany:"Entreprise",
+    talk:"Nous contacter",
+
+    eyebrow:"Infrastructure IA pour la croissance",
+
+    heroTitle:"L’IA qui fait avancer<span>votre entreprise.</span>",
+
+    heroLead:"Transformez les signaux clients en opportunités de revenus.",
+
+    heroSub:"Conversations, qualification et prochaines actions pilotées par l’IA pour les entreprises modernes.",
+
+    watch:"VOIR L’IA EN ACTION <span>→</span>",
+
+    contactLink:"Parler de votre entreprise ↗",
+
+    heroFoot:"INTELLIGENCE · CONVERSATION · ACTION",
+
+    platformKicker:"La couche d’intelligence",
+
+    platformTitle:"Pas un simple chatbot.<br><span>Une couche de croissance intelligente.</span>",
+
+    platformLead:"LEGMAO AI relie signaux clients, conversations et workflows afin que les équipes comprennent plus vite, répondent mieux et agissent au bon moment.",
+
+    flow1Title:"Signaux clients",
+    flow1Copy:"Capturez questions, préférences, urgence et intention d’achat.",
+
+    flow2Title:"L’IA comprend",
+    flow2Copy:"Comprenez le contexte derrière les conversations, pas seulement les mots-clés.",
+
+    flow3Title:"Qualifier les opportunités",
+    flow3Copy:"Structurez intention, budget, localisation et calendrier.",
+
+    flow4Title:"Recommander l’action",
+    flow4Copy:"Aidez les équipes à déterminer la prochaine étape.",
+
+    capKicker:"Ce que fait LEGMAO AI",
+
+    capTitle:"Une intelligence qui fait<span>avancer le travail.</span>",
+
+    capLead:"Transformez chaque interaction client en processus business connecté.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"Comprenez les besoins, priorités et attentes futures des clients.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"Des conversations naturelles avec contexte plutôt que des scripts rigides.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"Structurez intention, budget, localisation et timing pour prioriser les opportunités.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"Recommandez les prochaines actions utiles.",
+
+    demoKicker:"Concept produit interactif",
+
+    demoTitle:"Du signal client<br><span>à la décision business.</span>",
+
+    demoLead:"Explorez une demande immobilière et voyez comment l’IA transforme la conversation en contexte business.",
+
+    conversationLabel:"AI Sales Assistant / Conversation exemple",
+
+    autoPlay:"Lancer la démo",
+    nextStep:"Étape suivante →",
+    resetDemo:"Réinitialiser",
+
+    demoHint:"Expérience produit illustrative. Le score et la recommandation sont des valeurs d’exemple.",
+
+    signalTitle:"Signal client",
+
+    intentLabel:"INTENTION",
+    budgetLabel:"BUDGET",
+    locationLabel:"LOCALISATION",
+    timelineLabel:"DÉLAI",
+
+    scoreLabel:"Score d’opportunité exemple",
+
+    nextActionLabel:"Prochaine action",
+
+    industryKicker:"Pour les entreprises réelles",
+
+    industryTitle:"Une couche d’intelligence.<br><span>De nombreux contextes business.</span>",
+
+    industryLead:"Commencez par un cas d’usage clair et développez selon vos besoins.",
+
+    realEstate:"Immobilier",
+    automotive:"Automobile",
+    ecommerce:"E-commerce",
+    hospitality:"Hôtellerie",
+    restaurants:"Restaurants",
+    construction:"Construction",
+    trading:"Trading",
+    manufacturing:"Industrie",
+
+    realEstateKicker:"Premier cas d’usage",
+
+    realEstateTitle:"Immobilier<br>Sales Intelligence",
+
+    realEstateCopy:"Transformez les demandes immobilières en opportunités structurées. Comprenez intention, budget, localisation et timing pour mieux prioriser les suivis commerciaux.",
+
+    caseLink:"VOIR LE USE CASE →",
+
+    ctaKicker:"Commencer une conversation",
+
+    ctaTitle:"Construisons la suite.",
+
+    ctaLead:"Montrez-nous où votre entreprise perd du temps, des opportunités ou de l’élan. Explorons ensemble où l’IA peut aider.",
+
+    ctaButton:"COMMENCER LA CONVERSATION <span>→</span>"
+  },
+
+
+  es:{
+    navPlatform:"Plataforma",
+    navIntelligence:"Inteligencia",
+    navIndustries:"Sectores",
+    navCompany:"Empresa",
+    talk:"Contactar",
+
+    eyebrow:"Infraestructura de IA para el crecimiento",
+
+    heroTitle:"IA que impulsa<span>tu negocio.</span>",
+
+    heroLead:"Convierte las señales de clientes en oportunidades de ingresos.",
+
+    heroSub:"Conversaciones, cualificación y próximas acciones impulsadas por IA para empresas modernas.",
+
+    watch:"VER LA IA EN ACCIÓN <span>→</span>",
+
+    contactLink:"Hablar sobre tu negocio ↗",
+
+    heroFoot:"INTELIGENCIA · CONVERSACIÓN · ACCIÓN",
+
+    platformKicker:"La capa de inteligencia",
+
+    platformTitle:"No es otro chatbot.<br><span>Es una capa inteligente de crecimiento.</span>",
+
+    platformLead:"LEGMAO AI conecta señales de clientes, conversaciones y flujos de trabajo para que los equipos entiendan antes, respondan mejor y actúen a tiempo.",
+
+    flow1Title:"Señales del cliente",
+    flow1Copy:"Captura preguntas, preferencias, urgencia e intención de compra.",
+
+    flow2Title:"La IA entiende",
+    flow2Copy:"Comprende el contexto detrás de las conversaciones, no solo las palabras clave.",
+
+    flow3Title:"Cualificar oportunidades",
+    flow3Copy:"Estructura intención, presupuesto, ubicación y plazo.",
+
+    flow4Title:"Recomendar acción",
+    flow4Copy:"Ayuda al equipo a decidir qué hacer después.",
+
+    capKicker:"Qué hace LEGMAO AI",
+
+    capTitle:"Inteligencia que hace que el trabajo<span>avance.</span>",
+
+    capLead:"Convierte cada interacción con el cliente en un proceso de negocio conectado.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"Comprende qué necesitan los clientes, qué valoran y qué podrían necesitar después.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"Conversaciones naturales con contexto en lugar de scripts rígidos.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"Estructura intención, presupuesto, ubicación y tiempo para priorizar oportunidades.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"Recomienda las siguientes acciones prácticas.",
+
+    demoKicker:"Concepto de producto interactivo",
+
+    demoTitle:"De una señal del cliente<br><span>a una decisión de negocio.</span>",
+
+    demoLead:"Explora una consulta inmobiliaria de ejemplo y observa cómo la IA la convierte en contexto empresarial.",
+
+    conversationLabel:"AI Sales Assistant / Conversación de ejemplo",
+
+    autoPlay:"Reproducir demo",
+    nextStep:"Siguiente paso →",
+    resetDemo:"Reiniciar",
+
+    demoHint:"Experiencia de producto ilustrativa. La puntuación y recomendación son valores de ejemplo.",
+
+    signalTitle:"Señal del cliente",
+
+    intentLabel:"INTENCIÓN",
+    budgetLabel:"PRESUPUESTO",
+    locationLabel:"UBICACIÓN",
+    timelineLabel:"PLAZO",
+
+    scoreLabel:"Puntuación de oportunidad de ejemplo",
+
+    nextActionLabel:"Siguiente acción",
+
+    industryKicker:"Diseñado para negocios reales",
+
+    industryTitle:"Una capa de inteligencia.<br><span>Muchos contextos de negocio.</span>",
+
+    industryLead:"Empieza con un caso de uso claro y amplíalo según evolucione tu negocio.",
+
+    realEstate:"Inmobiliario",
+    automotive:"Automoción",
+    ecommerce:"E-commerce",
+    hospitality:"Hostelería",
+    restaurants:"Restaurantes",
+    construction:"Construcción",
+    trading:"Trading",
+    manufacturing:"Manufactura",
+
+    realEstateKicker:"Primer caso de uso",
+
+    realEstateTitle:"Inmobiliario<br>Sales Intelligence",
+
+    realEstateCopy:"Convierte las consultas inmobiliarias en oportunidades estructuradas. Comprende intención, presupuesto, ubicación y plazo para priorizar el seguimiento comercial.",
+
+    caseLink:"VER EL CASO DE USO →",
+
+    ctaKicker:"Iniciar conversación",
+
+    ctaTitle:"Construye lo que sigue.",
+
+    ctaLead:"Cuéntanos dónde tu negocio pierde tiempo, oportunidades o impulso. Exploremos dónde puede ayudar la IA.",
+
+    ctaButton:"INICIAR CONVERSACIÓN <span>→</span>"
+  },
+
+
+  de:{
+    navPlatform:"Plattform",
+    navIntelligence:"Intelligenz",
+    navIndustries:"Branchen",
+    navCompany:"Unternehmen",
+    talk:"Kontakt",
+
+    eyebrow:"KI-Infrastruktur für Wachstum",
+
+    heroTitle:"KI, die Ihr Geschäft<span>voranbringt.</span>",
+
+    heroLead:"Verwandeln Sie Kundensignale in Umsatzchancen.",
+
+    heroSub:"KI-gestützte Gespräche, Qualifizierung und nächste Schritte für moderne Unternehmen.",
+
+    watch:"KI IN AKTION <span>→</span>",
+
+    contactLink:"Über Ihr Unternehmen sprechen ↗",
+
+    heroFoot:"INTELLIGENZ · GESPRÄCH · AKTION",
+
+    platformKicker:"Die Intelligenzebene",
+
+    platformTitle:"Kein gewöhnlicher Chatbot.<br><span>Eine intelligente Wachstumsebene.</span>",
+
+    platformLead:"LEGMAO AI verbindet Kundensignale, Gespräche und Workflows, damit Teams schneller verstehen, besser reagieren und rechtzeitig handeln.",
+
+    flow1Title:"Kundensignale",
+    flow1Copy:"Fragen, Präferenzen, Dringlichkeit und Kaufabsichten erfassen.",
+
+    flow2Title:"KI versteht",
+    flow2Copy:"Den Kontext hinter Gesprächen erkennen, nicht nur Keywords.",
+
+    flow3Title:"Chancen qualifizieren",
+    flow3Copy:"Absicht, Budget, Standort und Zeitrahmen strukturieren.",
+
+    flow4Title:"Aktion empfehlen",
+    flow4Copy:"Teams beim nächsten sinnvollen Schritt unterstützen.",
+
+    capKicker:"Was LEGMAO AI macht",
+
+    capTitle:"Intelligenz, die Arbeit<span>voranbringt.</span>",
+
+    capLead:"Aus jeder Kundeninteraktion wird ein vernetzter Geschäftsprozess.",
+
+    cap1Title:"Customer Intelligence",
+    cap1Copy:"Bedürfnisse, Prioritäten und nächste Erwartungen verstehen.",
+
+    cap2Title:"AI Conversations",
+    cap2Copy:"Kontextbezogene Gespräche statt starrer Skripte.",
+
+    cap3Title:"Opportunity Intelligence",
+    cap3Copy:"Absicht, Budget, Standort und Zeit strukturiert erfassen.",
+
+    cap4Title:"Next Best Action",
+    cap4Copy:"Praktische nächste Schritte empfehlen.",
+
+    demoKicker:"Interaktives Produktkonzept",
+
+    demoTitle:"Vom Kundensignal<br><span>zur Geschäftsentscheidung.</span>",
+
+    demoLead:"Entdecken Sie eine beispielhafte Immobilienanfrage und wie daraus strukturierter Geschäftskontext entsteht.",
+
+    conversationLabel:"AI Sales Assistant / Beispielgespräch",
+
+    autoPlay:"Demo abspielen",
+    nextStep:"Nächster Schritt →",
+    resetDemo:"Zurücksetzen",
+
+    demoHint:"Illustratives Produkterlebnis. Score und Empfehlung sind Beispielwerte.",
+
+    signalTitle:"Kundensignal",
+
+    intentLabel:"ABSICHT",
+    budgetLabel:"BUDGET",
+    locationLabel:"STANDORT",
+    timelineLabel:"ZEITRAHMEN",
+
+    scoreLabel:"Beispiel-Chancen-Score",
+
+    nextActionLabel:"Nächste Aktion",
+
+    industryKicker:"Für echte Geschäftsanforderungen",
+
+    industryTitle:"Eine Intelligenzebene.<br><span>Viele Geschäftskontexte.</span>",
+
+    industryLead:"Beginnen Sie mit einem klaren Anwendungsfall und erweitern Sie ihn mit Ihrem Unternehmen.",
+
+    realEstate:"Immobilien",
+    automotive:"Automobil",
+    ecommerce:"E-Commerce",
+    hospitality:"Hotellerie",
+    restaurants:"Restaurants",
+    construction:"Bau",
+    trading:"Handel",
+    manufacturing:"Produktion",
+
+    realEstateKicker:"Erster Anwendungsfall",
+
+    realEstateTitle:"Immobilien<br>Sales Intelligence",
+
+    realEstateCopy:"Verwandeln Sie Immobilienanfragen in strukturierte Chancen. Erkennen Sie Absicht, Budget, Lage und Zeitrahmen für bessere Vertriebs-Follow-ups.",
+
+    caseLink:"USE CASE ANSEHEN →",
+
+    ctaKicker:"Gespräch beginnen",
+
+    ctaTitle:"Die nächste Stufe bauen.",
+
+    ctaLead:"Zeigen Sie uns, wo Ihr Unternehmen Zeit, Chancen oder Dynamik verliert. Gemeinsam finden wir sinnvolle Einsatzbereiche für KI.",
+
+    ctaButton:"GESPRÄCH BEGINNEN <span>→</span>"
+  }
+
+};
+
+
+/* ============================================================
+   LANGUAGE NAMES
+============================================================ */
+
+const languageNames = {
+  en:"EN · English",
+  zh:"中文 · 简体",
+  "zh-tw":"繁體中文",
+  km:"ខ្មែរ · Khmer",
+  ja:"日本語 · Japanese",
+  ko:"한국어 · Korean",
+  th:"ไทย · Thai",
+  vi:"Tiếng Việt",
+  id:"Bahasa Indonesia",
+  fr:"Français",
+  es:"Español",
+  de:"Deutsch"
+};
+
+
+/* ============================================================
+   LANGUAGE
+============================================================ */
+
+function applyLanguage(lang){
+
+  const d = dictionary[lang] || dictionary.en;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+
+    const key = el.dataset.i18n;
+
+    if(d[key]){
+      el.innerHTML = d[key];
+    }
+
+  });
+
+  document.getElementById("langLabel").textContent =
+    languageNames[lang] || languageNames.en;
+
+  document.querySelectorAll("[data-lang]").forEach(link => {
+
+    if(link.dataset.lang === lang){
+      link.setAttribute("aria-current","true");
+    }else{
+      link.removeAttribute("aria-current");
+    }
+
+  });
+
+}
+
+
+/* ============================================================
+   INITIAL LANGUAGE
+============================================================ */
+
+const initialLang =
+  new URLSearchParams(location.search).get("lang") || "en";
+
+applyLanguage(initialLang);
+
+
+/* ============================================================
+   LANGUAGE SWITCHING
+============================================================ */
+
+document.querySelectorAll("[data-lang]").forEach(link => {
+
+  link.addEventListener("click", event => {
+
+    event.preventDefault();
+
+    const lang = link.dataset.lang;
+
+    applyLanguage(lang);
+
+    if(lang === "en"){
+      history.replaceState(
+        null,
+        "",
+        location.pathname + "#top"
+      );
+    }else{
+      history.replaceState(
+        null,
+        "",
+        location.pathname + "?lang=" + lang + "#top"
+      );
+    }
+
+    document.getElementById("langPicker").open = false;
+
+  });
+
+});
+
+
+/* ============================================================
+   CLOSE LANGUAGE MENU
+============================================================ */
+
+document.addEventListener("click", event => {
+
+  const picker = document.getElementById("langPicker");
+
+  if(!picker.contains(event.target)){
+    picker.open = false;
+  }
+
+});
+
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navlinks =
+  document.getElementById("navlinks");
+
+
+menuToggle.addEventListener("click", () => {
+
+  const open =
+    navlinks.classList.toggle("open");
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
+  menuToggle.textContent =
+    open ? "×" : "☰";
+
+});
+
+
+navlinks.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navlinks.classList.remove("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menuToggle.textContent = "☰";
+
+  });
+
+});
+
+
+/* ============================================================
+   AI DEMO DATA
+============================================================ */
+
+const demoSteps = [
+
+  {
+    messages:[
+      [
+        "user",
+        "I'm looking for a condo in Phnom Penh."
+      ],
+      [
+        "ai",
+        "Is this mainly for living, or are you looking at it as an investment?"
+      ]
+    ],
+
+    intent:"Unknown",
+    budget:"Not specified",
+    location:"Phnom Penh",
+    timeline:"Not specified",
+
+    score:22,
+
+    state:"INITIAL SIGNAL",
+
+    action:
+      "Ask whether the property is for personal use or investment."
+  },
+
+
+  {
+    messages:[
+      [
+        "user",
+        "Mainly investment. Around $150k."
+      ],
+      [
+        "ai",
+        "Understood. I’ll look at budget fit and investment intent, then narrow the search."
+      ]
+    ],
+
+    intent:"Investment",
+    budget:"$150K",
+    location:"Phnom Penh",
+    timeline:"Not specified",
+
+    score:54,
+
+    state:"INTENT IDENTIFIED",
+
+    action:
+      "Confirm preferred areas and expected purchase timing."
+  },
+
+
+  {
+    messages:[
+      [
+        "user",
+        "BKK1 works. I'd like something I can rent out quickly."
+      ],
+      [
+        "ai",
+        "That helps. I’ll prioritize rental demand, practical layouts and a realistic entry price."
+      ]
+    ],
+
+    intent:"Investment",
+    budget:"$150K",
+    location:"BKK1, Phnom Penh",
+    timeline:"1–3 months",
+
+    score:78,
+
+    state:"HIGHER INTENT SIGNAL",
+
+    action:
+      "Prepare a shortlist and verify availability, rental assumptions and total costs."
+  },
+
+
+  {
+    messages:[
+      [
+        "ai",
+        "The enquiry is now structured for a sales follow-up. A team member can validate the details and recommend suitable properties."
+      ]
+    ],
+
+    intent:"Investment",
+    budget:"$150K",
+    location:"BKK1, Phnom Penh",
+    timeline:"1–3 months",
+
+    score:89,
+
+    state:"QUALIFIED SAMPLE",
+
+    action:
+      "Route to the real-estate sales team with context and a tailored property shortlist."
+  }
+
+];
+
+
+let stepIndex = 0;
+let playTimer = null;
+
+
+/* ============================================================
+   DOM REFERENCES
+============================================================ */
+
+const chat =
+  document.getElementById("chatMessages");
+
+const intentValue =
+  document.getElementById("intentValue");
+
+const budgetValue =
+  document.getElementById("budgetValue");
+
+const locationValue =
+  document.getElementById("locationValue");
+
+const timelineValue =
+  document.getElementById("timelineValue");
+
+const scoreValue =
+  document.getElementById("scoreValue");
+
+const scoreState =
+  document.getElementById("scoreState");
+
+const scoreBar =
+  document.getElementById("scoreBar");
+
+const nextActionText =
+  document.getElementById("nextActionText");
+
+const stageLabel =
+  document.getElementById("stageLabel");
+
+
+/* ============================================================
+   RENDER DEMO STEP
+============================================================ */
+
+function renderStep(index){
+
+  const step = demoSteps[index];
+
+  chat.innerHTML = "";
+
+  step.messages.forEach(([type,text]) => {
+
+    const message =
+      document.createElement("div");
+
+    message.className =
+      "msg " + type;
+
+    message.textContent = text;
+
+    chat.appendChild(message);
+
+  });
+
+
+  intentValue.textContent =
+    step.intent;
+
+  budgetValue.textContent =
+    step.budget;
+
+  locationValue.textContent =
+    step.location;
+
+  timelineValue.textContent =
+    step.timeline;
+
+  scoreValue.textContent =
+    step.score;
+
+  scoreState.textContent =
+    step.state;
+
+  nextActionText.textContent =
+    step.action;
+
+  stageLabel.textContent =
+    "STAGE 0" + (index + 1) + " / 04";
+
+
+  requestAnimationFrame(() => {
+
+    scoreBar.style.width =
+      step.score + "%";
+
+  });
+
+
+  const nextButton =
+    document.getElementById("nextStep");
+
+  if(index === demoSteps.length - 1){
+
+    nextButton.textContent =
+      "Start again ↻";
+
+  }else{
+
+    nextButton.textContent =
+      "Next step →";
+
+  }
+
+}
+
+
+/* ============================================================
+   NEXT STEP
+============================================================ */
+
+function nextStep(){
+
+  stepIndex++;
+
+  if(stepIndex >= demoSteps.length){
+    stepIndex = 0;
+  }
+
+  renderStep(stepIndex);
+}
+
+
+/* ============================================================
+   STOP AUTOPLAY
+============================================================ */
+
+function stopPlay(){
+
+  if(playTimer){
+
+    clearInterval(playTimer);
+
+    playTimer = null;
+
+  }
+
+  document.getElementById("autoPlay").textContent =
+    "Play demo";
+}
+
+
+/* ============================================================
+   NEXT BUTTON
+============================================================ */
+
+document.getElementById("nextStep")
+  .addEventListener("click", () => {
+
+    stopPlay();
+
+    nextStep();
+
+  });
+
+
+/* ============================================================
+   RESET BUTTON
+============================================================ */
+
+document.getElementById("resetDemo")
+  .addEventListener("click", () => {
+
+    stopPlay();
+
+    stepIndex = 0;
+
+    renderStep(stepIndex);
+
+  });
+
+
+/* ============================================================
+   AUTOPLAY
+============================================================ */
+
+document.getElementById("autoPlay")
+  .addEventListener("click", () => {
+
+    if(playTimer){
+
+      stopPlay();
+
+      return;
+
+    }
+
+
+    document.getElementById("autoPlay").textContent =
+      "Pause demo";
+
+
+    playTimer = setInterval(() => {
+
+      if(stepIndex >= demoSteps.length - 1){
+
+        stopPlay();
+
+        return;
+
+      }
+
+      stepIndex++;
+
+      renderStep(stepIndex);
+
+    },2600);
+
+  });
+
+
+/* ============================================================
+   INITIAL DEMO
+============================================================ */
+
+renderStep(0);
+
+
+/* ============================================================
+   REVEAL ANIMATION
+============================================================ */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+
+if("IntersectionObserver" in window){
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.12
+      }
+    );
+
+
+  revealElements.forEach(el => {
+
+    observer.observe(el);
+
+  });
+
+}else{
+
+  revealElements.forEach(el => {
+
+    el.classList.add("show");
+
+  });
+
+}
+
+
+/* ============================================================
+   YEAR
+============================================================ */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
+```
