@@ -1,97 +1,1094 @@
-<strong>Convert</strong>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="step">
-      <span>06</span>
-      <strong>Scale</strong>
-    </div>
+  <title>LEGMAO AI — AI That Moves Business Forward</title>
 
-  </div>
-
-</div>
-  <div class="section-label">
-    Industries
-  </div>
-
-  <h2 class="section-title">
-    Built for businesses that want to grow.
-  </h2>
-
-  <div class="industries">
-
-    <div class="industry">
-      Real Estate
-    </div>
-
-    <div class="industry">
-      Automotive
-    </div>
-
-    <div class="industry">
-      Construction
-    </div>
-
-    <div class="industry">
-      Hospitality
-    </div>
-
-    <div class="industry">
-      Restaurants
-    </div>
-
-    <div class="industry">
-      E-commerce
-    </div>
-
-    <div class="industry">
-      Trading
-    </div>
-
-    <div class="industry">
-      Manufacturing
-    </div>
-
-  </div>
-
-</div>
-<div class="container">
-
-  <div class="section-label">
-    Let's Grow
-  </div>
-
-  <h2 class="section-title">
-    Ready to turn AI into growth?
-  </h2>
-
-  <p>
-    Tell us how your business currently attracts
-    and follows up with customers.
-    We'll show you where AI can help.
-  </p>
-
-  <a
-    class="button primary"
-    href="mailto:legmao.ai@gmail.com"
+  <meta
+    name="description"
+    content="LEGMAO AI builds intelligent systems that help businesses engage customers, qualify leads, automate workflows and accelerate growth."
   >
-    legmao.ai@gmail.com
-  </a>
 
-</div>
-<div class="container footer-inner">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <div>
-    <div class="footer-brand">
-      LEGMAO AI
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      width: min(1180px, 90%);
+      margin: auto;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      color: #bdbdbd;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      color: #fff;
+      transition: 0.25s;
+    }
+
+    .nav-button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 160px;
+      padding-bottom: 100px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #888;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 7vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      max-width: 850px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 span {
+      color: #777;
+    }
+
+    .hero p {
+      color: #a8a8a8;
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .button.primary {
+      background: #fff;
+      color: #000;
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+      background: #ddd;
+    }
+
+    .button.secondary {
+      border: 1px solid #333;
+      color: #fff;
+    }
+
+    .button.secondary:hover {
+      border-color: #777;
+    }
+
+    /* AI DEMO */
+
+    .ai-demo {
+      background: #0c0c0c;
+      border: 1px solid #242424;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    }
+
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #202020;
+      margin-bottom: 20px;
+    }
+
+    .demo-title {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .live {
+      font-size: 11px;
+      color: #aaa;
+    }
+
+    .live::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border-radius: 50%;
+      margin-right: 7px;
+    }
+
+    .chat {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      max-width: 85%;
+      padding: 13px 15px;
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
+    .customer {
+      background: #181818;
+      color: #ddd;
+      align-self: flex-start;
+    }
+
+    .ai {
+      background: #f5f5f5;
+      color: #111;
+      align-self: flex-end;
+    }
+
+    .lead-card {
+      margin-top: 20px;
+      border: 1px solid #2d2d2d;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .lead-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .lead-title {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #888;
+    }
+
+    .hot {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .lead-score {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .lead-item {
+      background: #111;
+      padding: 11px;
+      border-radius: 10px;
+    }
+
+    .lead-item small {
+      display: block;
+      color: #666;
+      font-size: 10px;
+      margin-bottom: 3px;
+    }
+
+    .lead-item strong {
+      font-size: 12px;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 120px 0;
+      border-top: 1px solid #151515;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1;
+      letter-spacing: -3px;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      color: #999;
+      font-size: 17px;
+    }
+
+    /* ENGINE */
+
+    .engine-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 65px;
+      border-top: 1px solid #292929;
+      border-left: 1px solid #292929;
+    }
+
+    .engine-card {
+      padding: 30px;
+      min-height: 220px;
+      border-right: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+    }
+
+    .engine-number {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 55px;
+    }
+
+    .engine-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .engine-card p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* PIPELINE */
+
+    .pipeline {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border: 1px solid #292929;
+    }
+
+    .pipeline-step {
+      padding: 28px 18px;
+      border-right: 1px solid #292929;
+      position: relative;
+    }
+
+    .pipeline-step:last-child {
+      border-right: none;
+    }
+
+    .pipeline-step span {
+      display: block;
+      color: #555;
+      font-size: 11px;
+      margin-bottom: 28px;
+    }
+
+    .pipeline-step strong {
+      font-size: 14px;
+    }
+
+    /* INDUSTRIES */
+
+    .industries {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #292929;
+      border-left: 1px solid #292929;
+    }
+
+    .industry {
+      min-height: 130px;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      border-right: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+      font-size: 18px;
+      transition: 0.25s;
+    }
+
+    .industry:hover {
+      background: #111;
+    }
+
+    /* FEATURED SOLUTION */
+
+    .featured {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .solution-card {
+      background: #0c0c0c;
+      border: 1px solid #252525;
+      border-radius: 20px;
+      padding: 35px;
+      min-height: 300px;
+    }
+
+    .solution-card .tag {
+      font-size: 10px;
+      color: #777;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 55px;
+    }
+
+    .solution-card h3 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .solution-card p {
+      color: #888;
+      max-width: 450px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 150px 0;
+    }
+
+    .cta .section-title {
+      margin: 0 auto 30px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 35px;
+      color: #888;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #151515;
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .engine-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pipeline {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .pipeline-step {
+        border-bottom: 1px solid #292929;
+      }
+
+      .industries {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      section {
+        padding: 85px 0;
+      }
+
+      .engine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .industries {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="nav-inner">
+
+      <a href="#" class="logo">
+        LEGMAO AI
+      </a>
+
+      <div class="nav-links">
+        <a href="#engine">Platform</a>
+        <a href="#industries">Industries</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#contact" class="nav-button">
+          Book a Demo
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          AI Growth Infrastructure
+        </div>
+
+        <h1>
+          AI That Moves
+          <span>Business Forward.</span>
+        </h1>
+
+        <p>
+          LEGMAO AI builds intelligent systems that engage customers,
+          qualify leads, automate workflows and help businesses grow.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="#solutions"
+            class="button primary"
+          >
+            SEE AI IN ACTION
+          </a>
+
+          <a
+            href="mailto:legmao.ai@gmail.com"
+            class="button secondary"
+          >
+            BOOK A DEMO
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- AI DEMO -->
+
+      <div class="ai-demo">
+
+        <div class="demo-header">
+
+          <div class="demo-title">
+            LEGMAO AI ENGINE
+          </div>
+
+          <div class="live">
+            LIVE DEMO
+          </div>
+
+        </div>
+
+
+        <div class="chat">
+
+          <div class="message customer">
+            I'm looking for a property in Phnom Penh.
+          </div>
+
+          <div class="message ai">
+            What's your approximate budget?
+          </div>
+
+          <div class="message customer">
+            Around $150,000.
+          </div>
+
+          <div class="message ai">
+            Is this mainly for living or investment?
+          </div>
+
+          <div class="message customer">
+            Investment.
+          </div>
+
+        </div>
+
+
+        <div class="lead-card">
+
+          <div class="lead-top">
+
+            <div class="lead-title">
+              AI LEAD INTELLIGENCE
+            </div>
+
+            <div class="hot">
+              HIGH INTENT
+            </div>
+
+          </div>
+
+          <div class="lead-score">
+            89 / 100
+          </div>
+
+          <div class="lead-grid">
+
+            <div class="lead-item">
+              <small>Budget</small>
+              <strong>$150K</strong>
+            </div>
+
+            <div class="lead-item">
+              <small>Location</small>
+              <strong>BKK1</strong>
+            </div>
+
+            <div class="lead-item">
+              <small>Purpose</small>
+              <strong>Investment</strong>
+            </div>
+
+            <div class="lead-item">
+              <small>Timeline</small>
+              <strong>1–3 Months</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div>
-      AI Growth Partner
+  </header>
+
+
+  <!-- AI ENGINE -->
+
+  <section id="engine">
+
+    <div class="container">
+
+      <div class="section-label">
+        The AI Engine
+      </div>
+
+      <h2 class="section-title">
+        One intelligent system.
+        Multiple business outcomes.
+      </h2>
+
+      <p class="section-description">
+        LEGMAO connects AI with the way your business sells,
+        serves customers and operates every day.
+      </p>
+
+
+      <div class="engine-grid">
+
+        <div class="engine-card">
+
+          <div class="engine-number">
+            01
+          </div>
+
+          <h3>
+            Engage
+          </h3>
+
+          <p>
+            Respond instantly across your customer touchpoints.
+          </p>
+
+        </div>
+
+
+        <div class="engine-card">
+
+          <div class="engine-number">
+            02
+          </div>
+
+          <h3>
+            Understand
+          </h3>
+
+          <p>
+            Capture intent, preferences, needs and buying signals.
+          </p>
+
+        </div>
+
+
+        <div class="engine-card">
+
+          <div class="engine-number">
+            03
+          </div>
+
+          <h3>
+            Automate
+          </h3>
+
+          <p>
+            Turn repetitive conversations and workflows into AI-powered systems.
+          </p>
+
+        </div>
+
+
+        <div class="engine-card">
+
+          <div class="engine-number">
+            04
+          </div>
+
+          <h3>
+            Convert
+          </h3>
+
+          <p>
+            Move qualified opportunities to the right action at the right time.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
 
-  <div>
-    Growth That Grows.
-  </div>
+  </section>
 
-</div>
+
+  <!-- SALES PIPELINE -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label">
+        From Conversation To Growth
+      </div>
+
+      <h2 class="section-title">
+        AI doesn't just answer.
+        It moves the business forward.
+      </h2>
+
+      <div class="pipeline">
+
+        <div class="pipeline-step">
+          <span>01</span>
+          <strong>Inquiry</strong>
+        </div>
+
+        <div class="pipeline-step">
+          <span>02</span>
+          <strong>Understand</strong>
+        </div>
+
+        <div class="pipeline-step">
+          <span>03</span>
+          <strong>Qualify</strong>
+        </div>
+
+        <div class="pipeline-step">
+          <span>04</span>
+          <strong>Recommend</strong>
+        </div>
+
+        <div class="pipeline-step">
+          <span>05</span>
+          <strong>Convert</strong>
+        </div>
+
+        <div class="pipeline-step">
+          <span>06</span>
+          <strong>Scale</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INDUSTRIES -->
+
+  <section id="industries">
+
+    <div class="container">
+
+      <div class="section-label">
+        Industries
+      </div>
+
+      <h2 class="section-title">
+        AI built around your business.
+      </h2>
+
+      <p class="section-description">
+        From sales and customer engagement to automation and operations,
+        LEGMAO AI adapts to the way your business grows.
+      </p>
+
+
+      <div class="industries">
+
+        <div class="industry">
+          Real Estate
+        </div>
+
+        <div class="industry">
+          Automotive
+        </div>
+
+        <div class="industry">
+          E-commerce
+        </div>
+
+        <div class="industry">
+          Hospitality
+        </div>
+
+        <div class="industry">
+          Restaurants
+        </div>
+
+        <div class="industry">
+          Construction
+        </div>
+
+        <div class="industry">
+          Trading
+        </div>
+
+        <div class="industry">
+          Manufacturing
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED SOLUTIONS -->
+
+  <section id="solutions">
+
+    <div class="container">
+
+      <div class="section-label">
+        Featured AI Solutions
+      </div>
+
+      <h2 class="section-title">
+        Built for real business workflows.
+      </h2>
+
+
+      <div class="featured">
+
+
+        <div class="solution-card">
+
+          <div class="tag">
+            REAL ESTATE AI
+          </div>
+
+          <h3>
+            From property inquiry
+            to qualified buyer.
+          </h3>
+
+          <p>
+            AI engages leads, understands budget and intent,
+            matches properties and routes high-intent buyers
+            to your sales team.
+          </p>
+
+        </div>
+
+
+        <div class="solution-card">
+
+          <div class="tag">
+            AUTOMOTIVE AI
+          </div>
+
+          <h3>
+            From vehicle inquiry
+            to test drive.
+          </h3>
+
+          <p>
+            AI identifies the buyer's needs, matches vehicles,
+            answers questions and moves qualified prospects
+            toward a showroom visit.
+          </p>
+
+        </div>
+
+
+        <div class="solution-card">
+
+          <div class="tag">
+            E-COMMERCE AI
+          </div>
+
+          <h3>
+            From product discovery
+            to purchase.
+          </h3>
+
+          <p>
+            AI helps customers find the right products,
+            answers questions and guides them toward purchase.
+          </p>
+
+        </div>
+
+
+        <div class="solution-card">
+
+          <div class="tag">
+            HOSPITALITY AI
+          </div>
+
+          <h3>
+            From guest inquiry
+            to confirmed booking.
+          </h3>
+
+          <p>
+            AI handles common guest questions,
+            recommends options and supports booking workflows
+            around the clock.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section id="contact" class="cta">
+
+    <div class="container">
+
+      <div class="section-label">
+        Let's Build
+      </div>
+
+      <h2 class="section-title">
+        Your business.
+        <br>
+        Powered by AI.
+      </h2>
+
+      <p>
+        Tell us how your business attracts customers,
+        handles operations and drives growth.
+        We'll show you where AI can create leverage.
+      </p>
+
+      <a
+        class="button primary"
+        href="mailto:legmao.ai@gmail.com"
+      >
+        BOOK A PRIVATE DEMO
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="footer-brand">
+          LEGMAO AI
+        </div>
+
+        <div>
+          AI Growth Infrastructure
+        </div>
+
+      </div>
+
+      <div>
+        Growth That Grows.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
