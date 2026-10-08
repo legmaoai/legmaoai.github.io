@@ -41,7 +41,7 @@
 @media(max-width:650px){.capStream{margin-top:36px}.capLine{grid-template-columns:30px 1fr 20px;gap:10px;padding:21px 0}.capLine h3{font-size:19px}.capLine p{grid-column:2/4;font-size:10px;margin-top:-1px}.capLine>b{grid-column:3;grid-row:1}.workspaceGrid{gap:30px}.workspaceBar{padding-bottom:12px}}
 
 /* v3 — fluid art direction: no-template navigation, custom cursor, asymmetry + living motion */
-html{cursor:none}a,button,summary{cursor:none}
+html,a,button,summary{cursor:auto}
 .cursorDot,.cursorRing{position:fixed;left:0;top:0;pointer-events:none;z-index:9999;opacity:0;transform:translate(-50%,-50%)}
 .cursorDot{width:5px;height:5px;border-radius:50%;background:#dce4ff;box-shadow:0 0 14px rgba(125,145,255,.9),0 0 34px rgba(95,115,255,.35);transition:transform .12s ease,background .2s ease}
 .cursorRing{width:34px;height:34px;border:1px solid rgba(157,174,255,.42);border-radius:50%;transition:width .28s ease,height .28s ease,border-color .28s ease,background .28s ease,transform .16s ease}
@@ -267,5 +267,5 @@ html:lang(zh) h1,html:lang(zh) h2,html:lang(zh-tw) h1,html:lang(zh-tw) h2,html:l
 
 /* Show the custom cursor whenever a mouse or other precise pointer is available,
    including touch-enabled laptops whose primary pointer is reported as coarse. */
-@media (any-pointer:fine){html,a,button,summary{cursor:none!important}.cursorDot,.cursorRing{display:block!important}}
+@media (any-pointer:fine){body.cursor-ready,body.cursor-ready a,body.cursor-ready button,body.cursor-ready summary{cursor:none!important}.cursorDot,.cursorRing{display:block!important}}
 @media (not (any-pointer:fine)){html,a,button,summary{cursor:auto!important}.cursorDot,.cursorRing{display:none!important}}
