@@ -16,6 +16,10 @@
   });
   picker.before(select);
   picker.parentElement.classList.add('mobile-language-ready');
+  const closeNav = () => {
+    const button = document.querySelector('.menuToggle');
+    if (button?.getAttribute('aria-expanded') === 'true') button.click();
+  };
   const sync = () => {
     select.value = document.documentElement.lang;
     select.setAttribute('lang', document.documentElement.lang);
@@ -24,15 +28,16 @@
     const link = links.find(item => item.dataset.lang === select.value);
     if (link) link.click();
     picker.open = false;
-    document.querySelectorAll('.navlinks.is-open,.navlinks.open').forEach(nav => nav.classList.remove('is-open','open'));
-    document.querySelectorAll('.menuToggle').forEach(button => button.setAttribute('aria-expanded', 'false'));
+    closeNav();
     sync();
   });
   document.querySelector('.menuToggle')?.addEventListener('click', () => { picker.open = false; });
   picker.querySelector('summary')?.addEventListener('click', () => {
-    document.querySelectorAll('.navlinks.is-open,.navlinks.open').forEach(nav => nav.classList.remove('is-open','open'));
-    document.querySelectorAll('.menuToggle').forEach(button => button.setAttribute('aria-expanded', 'false'));
+    closeNav();
   });
+  select.addEventListener('pointerdown', closeNav);
+  document.addEventListener('click', event => { if (!event.target.closest('.nav')) closeNav(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeNav(); });
   new MutationObserver(sync).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
   sync();
 })();

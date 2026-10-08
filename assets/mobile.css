@@ -1,5 +1,8 @@
 .mobileLanguage{display:none}
 @media(max-width:900px){
+  .heroCore{position:absolute!important;right:-40vw!important;top:25%!important;pointer-events:none}
+  .hero>.wrap{flex:0 0 calc(100% - 40px)!important;width:calc(100% - 40px)!important;margin:0 20px!important}
+  .heroContent{width:100%!important;max-width:100%!important}
   .navright.mobile-language-ready .lang{display:none!important}
   .mobileLanguage{display:block;min-height:44px;max-width:150px;width:38vw;padding:9px 25px 9px 10px;border:1px solid #343846;border-radius:9px;background:#101219;color:#edf0fa;font:16px/1.4 Arial,sans-serif;touch-action:manipulation}
   .mobileLanguage:focus-visible{outline:2px solid #bdc7ff;outline-offset:2px}
@@ -13,6 +16,9 @@
   .footerlinks a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
 }
 @media(max-width:600px){
+  .heroCore{position:absolute!important;right:-40vw!important;top:25%!important;pointer-events:none}
+  .hero>.wrap{flex:0 0 calc(100% - 40px)!important;width:calc(100% - 40px)!important;margin:0 20px!important}
+  .heroContent{width:100%!important;max-width:100%!important;padding-bottom:0!important}
   .wrap{width:calc(100% - 40px)!important;min-width:0}
   .hero{min-height:100svh;padding:140px 0 160px!important}
   .hero>.wrap.heroContent{flex:0 1 auto!important;width:calc(100% - 40px)!important;max-width:calc(100% - 40px)!important;margin:0 20px!important;padding-bottom:0!important;transform:none!important}
@@ -21,6 +27,7 @@
   .heroActions{flex-wrap:wrap;gap:16px;margin-top:28px}
   .textbtn,.secondaryLink,.pageAction,.industryCTA{min-height:44px;align-items:center;font-size:14px!important}
   .pageHero h1,.challengeHero h1{font-size:clamp(36px,10vw,58px)!important;line-height:1.15!important;overflow-wrap:anywhere;max-width:100%}
+  .pageHero h1 span,.challengeHero h1 span{color:#c6cbd8!important;-webkit-text-fill-color:#c6cbd8!important;-webkit-text-stroke:0!important}
   .pageHero,.challengeHero{padding-top:130px!important}
   .pageCard p,.principleCard p,.industryPageCard p,.exampleCard p,.challengeAside>p,.challengeConsent,.challengeStatus{font-size:15px!important;line-height:1.75!important;color:#aeb5c5!important}
   .pageCard,.principleCard,.industryPageCard,.exampleCard{padding:24px!important}
