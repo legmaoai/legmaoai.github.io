@@ -66,7 +66,7 @@ body.cursor-hover .cursorDot{transform:translate(-50%,-50%) scale(.7)}
 /* CTA gets atmosphere instead of a boxed finish */
 .cta{position:relative;overflow:hidden}.cta:before{content:'';position:absolute;left:50%;top:50%;width:48vw;height:48vw;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(94,113,255,.11),transparent 67%);filter:blur(20px);animation:ctaPulse 7s ease-in-out infinite alternate}.ctaInner{position:relative;z-index:2}.cta h2{font-size:clamp(58px,9vw,126px);letter-spacing:-.08em}
 @keyframes workspaceBreath{to{transform:translate3d(-3%,5%,0) scale(1.12)}}@keyframes ctaPulse{to{transform:translate(-50%,-50%) scale(1.18);opacity:.7}}
-@media(max-width:900px){html{cursor:auto}a,button,summary{cursor:pointer}.cursorDot,.cursorRing{display:none}.nav{width:calc(100% - 30px);top:12px}.navlinks{gap:20px}.capStream:before{left:7px}.capLine{grid-template-columns:34px 1fr 20px;padding:29px 0 29px 30px}.capLine:before{left:3px}.workspaceGrid{gap:42px}.conversation:after{display:none}.industryFeature{grid-template-columns:1fr;gap:20px;padding:25px 0!important}.industryVisual{order:1;min-height:400px;width:100%;transform:rotate(0)}.industryCopy{order:2;padding:10px 0 40px!important}.industryCopy h3{font-size:clamp(42px,11vw,68px)!important}.industryList{margin-top:35px}}
+@media(max-width:900px){.nav{width:calc(100% - 30px);top:12px}.navlinks{gap:20px}.capStream:before{left:7px}.capLine{grid-template-columns:34px 1fr 20px;padding:29px 0 29px 30px}.capLine:before{left:3px}.workspaceGrid{gap:42px}.conversation:after{display:none}.industryFeature{grid-template-columns:1fr;gap:20px;padding:25px 0!important}.industryVisual{order:1;min-height:400px;width:100%;transform:rotate(0)}.industryCopy{order:2;padding:10px 0 40px!important}.industryCopy h3{font-size:clamp(42px,11vw,68px)!important}.industryList{margin-top:35px}}
 @media(max-width:560px){.nav{width:calc(100% - 22px);top:8px}.navlinks{display:none}.capLine{padding:26px 0 26px 25px}.capLine:before{left:0}.capLine h3{font-size:20px}.capLine p{font-size:10px}.workspace{padding-top:75px}.workspaceGrid{gap:18px}.insightPanel{padding-top:18px}.scoreValue{font-size:52px}.industryVisual{min-height:320px}.industryTags{gap:13px;flex-wrap:wrap}.cta h2{font-size:clamp(52px,15vw,82px)}}
 
 /* v4 — typography refinement + contact polish */
@@ -263,3 +263,7 @@ html:lang(zh) h1,html:lang(zh) h2,html:lang(zh-tw) h1,html:lang(zh-tw) h2,html:l
   .heroFoot small,.processMini{font-size:11px!important;line-height:1.6!important;letter-spacing:.07em!important;opacity:1!important}
   .textbtn,.secondaryLink{font-size:12px!important;line-height:1.5!important}
 }
+
+
+/* Show the custom cursor on every mouse-capable screen, including narrow laptop windows. */
+@media (hover:none), (pointer:coarse){html,a,button,summary{cursor:auto!important}.cursorDot,.cursorRing{display:none!important}}

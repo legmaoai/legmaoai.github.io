@@ -150,7 +150,7 @@ const businessKeys='heroTitle|heroLead|heroSub|watch|capKicker|capTitle|capLead|
   const interactive='a,button,summary,.capLine,.industryItem,.demoBtn';
   document.addEventListener('pointerover',e=>{if(e.target.closest(interactive))document.body.classList.add('cursor-hover')});
   document.addEventListener('pointerout',e=>{if(e.target.closest(interactive))document.body.classList.remove('cursor-hover')});
-  function tick(){rx+=(x-rx)*.22;ry+=(y-ry)*.22;dot.style.left=x+'px';dot.style.top=y+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick)} tick();
+  function tick(){rx+=(x-rx)*.85;ry+=(y-ry)*.85;dot.style.left=x+'px';dot.style.top=y+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick)} tick();
 })();
 
 /* Premium hero field — sparse particles, soft depth, no spectacle. */

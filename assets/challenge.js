@@ -110,7 +110,7 @@
       document.addEventListener('pointerover', event => { if (event.target.closest('a,button,summary,input,textarea')) document.body.classList.add('cursor-hover'); });
       document.addEventListener('pointerout', event => { if (event.target.closest('a,button,summary,input,textarea')) document.body.classList.remove('cursor-hover'); });
       const tick = () => {
-        rx += (x-rx)*.2; ry += (y-ry)*.2;
+        rx += (x-rx)*.85; ry += (y-ry)*.85;
         dot.style.left=`${x}px`; dot.style.top=`${y}px`; ring.style.left=`${rx}px`; ring.style.top=`${ry}px`;
         requestAnimationFrame(tick);
       };
