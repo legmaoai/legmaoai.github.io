@@ -4,7 +4,12 @@
     const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
     let node, lastText;
     while ((node = walker.nextNode())) if (node.nodeValue.trim()) lastText = node;
-    if (lastText) lastText.nodeValue = lastText.nodeValue.replace(/[.。]+(?=\s*$)/u, '');
+    if (lastText) {
+      const cleaned = lastText.nodeValue.replace(/[.。]+(?=\s*$)/u, '');
+      // Writing even an unchanged nodeValue queues another characterData record.
+      // Only change the DOM when punctuation actually needs to be removed.
+      if (cleaned !== lastText.nodeValue) lastText.nodeValue = cleaned;
+    }
   };
   const scan = root => {
     if (root.nodeType !== Node.ELEMENT_NODE) return;
