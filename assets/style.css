@@ -254,3 +254,12 @@ html:lang(zh) h1,html:lang(zh) h2,html:lang(zh-tw) h1,html:lang(zh-tw) h2,html:l
 /* Final small-label cleanup */
 .heroSub{font-size:14px!important;line-height:1.65!important;color:#a5abba!important}.heroFoot{font-size:12px!important}.flowStep .flowNo,.capLine>span,.fieldReadout,.fieldReadout b,.fieldLegend,.coreOrb span,.fieldNode b,.fieldNode small{font-size:12px!important;line-height:1.55!important;color:#a0a6b5!important}
 @media(max-width:600px){.heroSub{font-size:13px!important}.flowStep .flowNo,.capLine>span,.fieldReadout,.fieldReadout b,.fieldLegend,.coreOrb span,.fieldNode b,.fieldNode small{font-size:12px!important}}
+
+/* Keep the mobile hero readable and balanced on narrow screens. */
+@media(max-width:650px){
+  .hero>.wrap.heroContent{flex:0 0 calc(100% - 40px)!important;width:calc(100% - 40px)!important;max-width:none!important;margin-inline:20px!important;box-sizing:border-box!important}
+  .heroSub{font-size:14px!important;line-height:1.65!important;color:#aeb5c4!important}
+  .heroLead{font-size:16px!important;line-height:1.6!important}
+  .heroFoot small,.processMini{font-size:11px!important;line-height:1.6!important;letter-spacing:.07em!important;opacity:1!important}
+  .textbtn,.secondaryLink{font-size:12px!important;line-height:1.5!important}
+}

@@ -32,6 +32,20 @@
     es:{privacy:'Tus datos se envían a LEGMAO mediante FormSubmit para que podamos responderte. FormSubmit indica que los envíos pueden conservarse hasta 30 días.',submit:'Enviar mi desafío',sending:'Enviando…',success:'Tu desafío se ha enviado. Gracias; nos pondremos en contacto contigo.',error:'No se pudo enviar. Inténtalo de nuevo o contáctanos directamente.',local:'La vista previa de un archivo local no puede enviar formularios. Publica el sitio con HTTPS y vuelve a intentarlo.'},
     de:{privacy:'Ihre Angaben werden über FormSubmit an LEGMAO gesendet, damit wir antworten können. FormSubmit gibt an, dass Einsendungen bis zu 30 Tage gespeichert werden können.',submit:'Herausforderung senden',sending:'Wird gesendet…',success:'Ihre Herausforderung wurde gesendet. Vielen Dank — wir melden uns.',error:'Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',local:'Eine lokale Dateivorschau kann das Formular nicht senden. Veröffentlichen Sie die Website über HTTPS und versuchen Sie es erneut.'}
   };
+  const activationCopy = {
+    en:'First-time setup: FormSubmit sent an activation email to LEGMAO. Check the inbox and spam folder, activate the form, then submit again if needed.',
+    zh:'这是首次启用：FormSubmit 已向 LEGMAO 邮箱发送验证邮件。请检查收件箱和垃圾邮件并点击验证链接；如有需要，再重新提交。',
+    'zh-tw':'這是首次啟用：FormSubmit 已向 LEGMAO 信箱寄出驗證郵件。請查看收件匣與垃圾郵件並點擊驗證連結；如有需要，再重新提交。',
+    km:'ការប្រើលើកដំបូង៖ FormSubmit បានផ្ញើអ៊ីមែលបញ្ជាក់ទៅ LEGMAO។ សូមពិនិត្យប្រអប់សំបុត្រ និងសារឥតបានការ រួចចុចតំណបញ្ជាក់។',
+    ja:'初回設定です。FormSubmit から LEGMAO に有効化メールが送信されました。受信トレイと迷惑メールを確認し、リンクをクリックしてください。',
+    ko:'첫 설정 단계입니다. FormSubmit이 LEGMAO로 활성화 이메일을 보냈습니다. 받은편지함과 스팸함을 확인해 링크를 눌러 주세요.',
+    th:'การตั้งค่าครั้งแรก: FormSubmit ส่งอีเมลยืนยันไปยัง LEGMAO แล้ว โปรดตรวจสอบกล่องจดหมายและสแปม แล้วคลิกลิงก์ยืนยัน',
+    vi:'Thiết lập lần đầu: FormSubmit đã gửi email kích hoạt đến LEGMAO. Hãy kiểm tra hộp thư đến và thư rác rồi nhấn liên kết xác nhận.',
+    id:'Penyiapan pertama: FormSubmit mengirim email aktivasi ke LEGMAO. Periksa kotak masuk dan spam, lalu klik tautan aktivasi.',
+    fr:'Première activation : FormSubmit a envoyé un e-mail à LEGMAO. Vérifiez la boîte de réception et les courriers indésirables, puis cliquez sur le lien.',
+    es:'Primera activación: FormSubmit envió un correo a LEGMAO. Revisa la bandeja de entrada y el correo no deseado y pulsa el enlace de activación.',
+    de:'Erstaktivierung: FormSubmit hat eine E-Mail an LEGMAO gesendet. Prüfen Sie Posteingang und Spam und klicken Sie auf den Aktivierungslink.'
+  };
   const navCopy = {
     en:['Solutions','Industries','Examples','Company'],zh:['业务挑战','行业领域','示意案例','关于我们'],'zh-tw':['業務挑戰','產業領域','示意案例','關於我們'],
     km:['ដំណោះស្រាយ','ឧស្សាហកម្ម','ឧទាហរណ៍','អំពីយើង'],ja:['事業課題','業界','事例','会社案内'],ko:['비즈니스 과제','산업','사례','회사 소개'],
@@ -122,6 +136,7 @@
       challenge: values.get('challenge'),
       consent: 'Yes',
       _replyto: values.get('email'),
+      _url: 'https://legmaoai.github.io/challenge.html',
       _subject: `LEGMAO business challenge — ${values.get('business') || values.get('name')}`
     };
     try {
@@ -131,10 +146,16 @@
         body: JSON.stringify(payload)
       });
       const result = await response.json();
+      if (/(activat|confirm|verif|pending)/i.test(String(result.message || ''))) {
+        status.textContent = activationCopy[language];
+        status.classList.remove('is-error');
+        return;
+      }
       if (!response.ok || result.success === false || result.success === 'false' || result.success === 'error') throw new Error('Form submission failed');
       status.textContent = copy.success;
       form.reset();
     } catch (error) {
+      console.warn('LEGMAO challenge form submission failed:', error);
       status.textContent = copy.error;
       status.classList.add('is-error');
     } finally {
