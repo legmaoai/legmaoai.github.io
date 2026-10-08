@@ -142,7 +142,7 @@ const businessKeys='heroTitle|heroLead|heroSub|watch|capKicker|capTitle|capLead|
 
 /* v3 custom cursor — quiet, spatial, brand-like */
 (function(){
-  if(matchMedia('(pointer:coarse)').matches) return;
+  if(!matchMedia('(any-pointer:fine)').matches) return;
   const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
   if(!dot||!ring)return;
   let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y,ready=false;

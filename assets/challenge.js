@@ -98,7 +98,7 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape'){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');}});
     window.addEventListener('resize',()=>{if(innerWidth>560){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');}});
   }
-  if (!matchMedia('(pointer:coarse), (prefers-reduced-motion:reduce)').matches) {
+  if (matchMedia('(any-pointer:fine)').matches) {
     const dot = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
     let x = innerWidth / 2, y = innerHeight / 2, rx = x, ry = y;

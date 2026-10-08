@@ -79,7 +79,7 @@
   document.addEventListener('click',event=>{if(!picker.contains(event.target))picker.open=false;});
   document.addEventListener('keydown',event=>{if(event.key==='Escape')picker.open=false;});
   document.querySelectorAll('[data-year]').forEach(node=>node.textContent=new Date().getFullYear());
-  if (!matchMedia('(pointer:coarse), (prefers-reduced-motion:reduce)').matches) {
+  if (matchMedia('(any-pointer:fine)').matches) {
     const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
     if(dot&&ring){let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y;document.addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;document.body.classList.add('cursor-ready');},{passive:true});document.addEventListener('pointerover',e=>{if(e.target.closest('a,button,summary'))document.body.classList.add('cursor-hover');});document.addEventListener('pointerout',e=>{if(e.target.closest('a,button,summary'))document.body.classList.remove('cursor-hover');});const tick=()=>{rx+=(x-rx)*.85;ry+=(y-ry)*.85;dot.style.left=`${x}px`;dot.style.top=`${y}px`;ring.style.left=`${rx}px`;ring.style.top=`${ry}px`;requestAnimationFrame(tick);};tick();}
   }

@@ -265,5 +265,7 @@ html:lang(zh) h1,html:lang(zh) h2,html:lang(zh-tw) h1,html:lang(zh-tw) h2,html:l
 }
 
 
-/* Show the custom cursor on every mouse-capable screen, including narrow laptop windows. */
-@media (hover:none), (pointer:coarse){html,a,button,summary{cursor:auto!important}.cursorDot,.cursorRing{display:none!important}}
+/* Show the custom cursor whenever a mouse or other precise pointer is available,
+   including touch-enabled laptops whose primary pointer is reported as coarse. */
+@media (any-pointer:fine){html,a,button,summary{cursor:none!important}.cursorDot,.cursorRing{display:block!important}}
+@media (not (any-pointer:fine)){html,a,button,summary{cursor:auto!important}.cursorDot,.cursorRing{display:none!important}}
