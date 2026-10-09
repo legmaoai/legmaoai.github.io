@@ -5,7 +5,7 @@
     let node, lastText;
     while ((node = walker.nextNode())) if (node.nodeValue.trim()) lastText = node;
     if (lastText) {
-      const cleaned = lastText.nodeValue.replace(/[.。]+(?=\s*$)/u, '');
+      const cleaned = lastText.nodeValue.replace(/[.。។]+(?=\s*$)/u, '');
       // Writing even an unchanged nodeValue queues another characterData record.
       // Only change the DOM when punctuation actually needs to be removed.
       if (cleaned !== lastText.nodeValue) lastText.nodeValue = cleaned;

@@ -76,7 +76,7 @@
     document.querySelector('[data-t="submit"]').textContent = stateCopy.submit;
     document.querySelectorAll('[data-nav]').forEach(node=>{const i={solutions:0,industries:1,examples:2,company:3}[node.dataset.nav];node.textContent=navCopy[language][i];});
     menu.querySelectorAll('[data-lang]').forEach(node => { if (node.dataset.lang === language) node.setAttribute('aria-current','true'); else node.removeAttribute('aria-current'); });
-    document.title = `${copy.submit} — LEGMAO`;
+    document.title = `${stateCopy.submit} — LEGMAO`;
     try{localStorage.setItem(localKey, language);}catch{}
   };
   menu.addEventListener('click', event => {
@@ -117,51 +117,38 @@
       tick();
     }
   }
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    const copy = submitCopy[language];
-    if (!form.reportValidity()) { status.textContent = translations[language].invalid; status.classList.add('is-error'); return; }
-    if (location.protocol === 'file:') { status.textContent = copy.local; status.classList.add('is-error'); return; }
-    const values = new FormData(form);
-    if (values.get('_honey')) return;
-    const button = form.querySelector('[type="submit"]');
-    button.disabled = true;
-    button.querySelector('span').textContent = copy.sending;
-    status.textContent = '';
-    status.classList.remove('is-error');
-    const payload = {
-      name: values.get('name'),
-      email: values.get('email'),
-      business: values.get('business') || 'Not provided',
-      challenge: values.get('challenge'),
-      consent: 'Yes',
-      _replyto: values.get('email'),
-      _url: 'https://legmaoai.github.io/challenge.html',
-      _subject: `LEGMAO business challenge — ${values.get('business') || values.get('name')}`
-    };
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/legmao.ai@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const result = await response.json();
-      if (/(activat|confirm|verif|pending)/i.test(String(result.message || ''))) {
-        status.textContent = activationCopy[language];
-        status.classList.remove('is-error');
-        return;
-      }
-      if (!response.ok || result.success === false || result.success === 'false' || result.success === 'error') throw new Error('Form submission failed');
-      status.textContent = copy.success;
-      form.reset();
-    } catch (error) {
-      console.warn('LEGMAO challenge form submission failed:', error);
-      status.textContent = copy.error;
-      status.classList.add('is-error');
-    } finally {
-      button.disabled = false;
-      button.querySelector('span').textContent = copy.submit;
-    }
-  });
+  let formState='idle', formDetail={}, dirty=false;
+  const recovery=document.createElement('div');recovery.className='formRecovery';recovery.hidden=true;
+  const retryLabel=document.createElement('label');retryLabel.className='retryCheck';
+  const acknowledge=document.createElement('input');acknowledge.type='checkbox';acknowledge.id='retryAcknowledgement';
+  const acknowledgeText=document.createElement('span');retryLabel.append(acknowledge,acknowledgeText);
+  const retry=document.createElement('button');retry.type='button';retry.id='retryEnquiry';
+  const backup=document.createElement('div');backup.className='backupContacts';
+  for(const [href,text] of [['mailto:legmao.ai@gmail.com','legmao.ai@gmail.com'],['https://wa.me/855963628317','WhatsApp · +855 96 362 8317'],['https://t.me/LegmaoAI','Telegram · @LegmaoAI']]){const a=document.createElement('a');a.href=href;a.textContent=text;if(href.startsWith('https:')){a.target='_blank';a.rel='noopener noreferrer'}backup.append(a)}
+  recovery.append(retryLabel,retry,backup);status.after(recovery);
+  function renderFormState(){
+    const copy=window.LEGMAOSiteCopy[language]||window.LEGMAOSiteCopy.en;
+    const text=formDetail.reason==='invalid'?copy.invalid:formDetail.reason==='local'?copy.local:copy[{idle:'idle',submitting:'sending',success:'success',failure:'failure',timeout:'timeout'}[formState]];
+    status.textContent=text;status.dataset.state=formState;status.classList.toggle('is-error',formState==='failure'||formState==='timeout');
+    const button=form.querySelector('[type="submit"]');button.disabled=formState==='submitting'||formState==='success'||!!formDetail.uncertain;
+    button.querySelector('span').textContent=formState==='submitting'?copy.sending:submitCopy[language].submit;
+    form.setAttribute('aria-busy',String(formState==='submitting'));
+    recovery.hidden=formState!=='failure'&&formState!=='timeout';retryLabel.hidden=!formDetail.uncertain;
+    retry.textContent=copy.retry;acknowledgeText.textContent=copy.check;retry.disabled=formState==='submitting'||(!!formDetail.uncertain&&!acknowledge.checked);retry.hidden=formDetail.reason==='local';
+  }
+  const client=window.LEGMAOForm.create({formUrl:location.origin+location.pathname,onState:(state,detail)=>{formState=state;formDetail=detail;acknowledge.checked=false;if(state==='success')dirty=false;renderFormState()}});
+  async function send(){
+    if(client.isActive())return;
+    if(!form.reportValidity())return;
+    if(location.protocol==='file:'){formState='failure';formDetail={reason:'local'};renderFormState();return;}
+    const values=new FormData(form);
+    await client.submit({name:values.get('name'),email:values.get('email'),business:values.get('business'),challenge:values.get('challenge'),consent:form.querySelector('[name="consent"]').checked,honey:values.get('_honey')},acknowledge.checked);
+  }
+  form.addEventListener('submit',event=>{event.preventDefault();send()});
+  retry.addEventListener('click',send);acknowledge.addEventListener('change',()=>{retry.disabled=!!formDetail.uncertain&&!acknowledge.checked});
+  form.addEventListener('input',()=>{dirty=true;client.edit()});
+  window.addEventListener('beforeunload',event=>{if(dirty||client.isActive()){event.preventDefault();event.returnValue=''}});
+  new MutationObserver(renderFormState).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  renderFormState();
   applyLanguage(language);
 })();
